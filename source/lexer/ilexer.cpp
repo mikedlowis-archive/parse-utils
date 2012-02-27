@@ -1,7 +1,6 @@
 #include <exception>
 #include "ilexer.h"
 #include "exception.h"
-#include "cork.h"
 
 using namespace std;
 
@@ -17,7 +16,7 @@ void ILexer::setInput(char* in)
 {
     line = 1;
     column = 0;
-    input = _new istringstream( string( in ) );
+    input = new istringstream( string( in ) );
     consume();
 }
 
@@ -25,7 +24,7 @@ void ILexer::setInput(string& in)
 {
     line = 1;
     column = 0;
-    input = _new istringstream( in );
+    input = new istringstream( in );
     consume();
 }
 

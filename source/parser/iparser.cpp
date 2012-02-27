@@ -19,7 +19,6 @@
  *****************************************************************************/
 #include <stdio.h>
 #include "iparser.h"
-#include "cork.h"
 
 using namespace std;
 
@@ -40,12 +39,12 @@ IParser::~IParser()
 
 void IParser::setInput(char* in)
 {
-    input = _new istringstream( string( in ) );
+    input = new istringstream( string( in ) );
 }
 
 void IParser::setInput(string& in)
 {
-    input = _new istringstream( in );
+    input = new istringstream( in );
 }
 
 void IParser::setInput(istream* in)

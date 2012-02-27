@@ -1,22 +1,30 @@
 include Rake::DSL
-require 'tools/rake_utils/buildconfig.rb'
-require 'tools/rake_utils/testconfig.rb'
+require 'tools/rake_utils/source/library.rb'
 
 #------------------------------------------------------------------------------
 # Configuration Objects
 #------------------------------------------------------------------------------
-# Configuration for the binary artifact
-Binary = BuildConfig.new({
-	:name => 'binary',
-	:compiler_options => [ '-c', '-Wall', '-Werror' ],
-	:source_files => [ 'source/**/*.c*' ],
-	:include_dirs => [ 'source/**/' ],
+# Configuration for the static library
+ParseUtilsStatic = Library.new({
+    :name => 'libparse-utils.a',
+    :output_dir => 'build/static',
+    :compiler_options => [ '-c', '-Wall', '-Werror', '-o'],
+    :source_files => [ 'source/**/*.c*' ],
+    :include_dirs => [ 'source/**/' ],
 })
+ParseUtilsStatic.setup_default_rake_tasks()
 
-# Configuration for the unit tests
-UnitTest = TestConfig.new({
-	:test_files => [ 'tests/source/**.h' ],
+# Configuration for the shared library
+ParseUtilsShared = Library.new({
+    :name => 'libparse-utils.so',
+    :output_dir => 'build/shared',
+    :compiler_options => [ '-c', '-Wall', '-Werror', '-o'],
+    :linker_bin => 'c++',
+    :linker_options => ['-shared', '-o'],
+    :source_files => [ 'source/**/*.c*' ],
+    :include_dirs => [ 'source/**/' ],
 })
+ParseUtilsShared.setup_default_rake_tasks()
 
 #------------------------------------------------------------------------------
 # Release Tasks
@@ -24,45 +32,6 @@ UnitTest = TestConfig.new({
 desc 'Execute a complete build including unit tests and binary'
 task :default => [ :release ]
 
-desc 'Display build configuration info'
-task :config do
-	puts 'Release Configuration'
-	puts '---------------------'
-	puts Binary
-	puts ''
-	puts 'Unit Test Configuration'
-	puts '-----------------------'
-	puts UnitTest
-end
-
 desc 'Build and link the binary'
-task :release => [ Binary.binary_name() ]
-
-task Binary.binary_name() => Binary.directories() + Binary.objects() do
-	Binary.link()
-end
-
-rule(/obj\/.+.o$/ => Binary.obj_src_lookup()) do |t|
-	Binary.compile(t.source,t.name)
-end
-
-#------------------------------------------------------------------------------
-# Testing Tasks
-#------------------------------------------------------------------------------
-desc 'Execute all unit tests'
-task :test => UnitTest.directories() + UnitTest.runners() do
-	UnitTest.run_all_test_runners();
-end
-
-rule '_runner.exe' => UnitTest.bin_obj_lookup() do |t|
-	UnitTest.link([t.source],t.name)
-end
-
-rule( /test\/.+_runner.o$/ => UnitTest.obj_src_lookup() ) do |t|
-	UnitTest.compile(t.source,t.name)
-end
-
-rule '_runner.cpp' => UnitTest.src_test_lookup() do |t|
-	UnitTest.generate_test_runner(t.source,t.name)
-end
+task :release => [ ParseUtilsStatic.name(), ParseUtilsShared.name() ]
 

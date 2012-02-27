@@ -1,6 +1,5 @@
 #include "llkparser.h"
 #include "exception.h"
-#include "cork.h"
 
 LLKParser::LLKParser(int k_val, ILexer* lxer) : k(k_val), next(0), lexer(lxer)
 {

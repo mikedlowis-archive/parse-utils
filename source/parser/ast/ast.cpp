@@ -2,27 +2,26 @@
 #include <sstream>
 #include <string.h>
 #include <iostream>
-#include "cork.h"
 
 AST::AST(ASTNodeType type)
 {
     node_type = type;
     node_text = "";
-    node_children = _new list<AST*>();
+    node_children = new list<AST*>();
 }
 
 AST::AST(ASTNodeType type, const char* text)
 {
     node_type = type;
     node_text = string(text);
-    node_children = _new list<AST*>();
+    node_children = new list<AST*>();
 }
 
 AST::AST(ASTNodeType type, std::string text)
 {
     node_type = type;
     node_text = text;
-    node_children = _new list<AST*>();
+    node_children = new list<AST*>();
 }
 
 AST::AST(ASTNodeType type, int child_count, ...)
@@ -31,7 +30,7 @@ AST::AST(ASTNodeType type, int child_count, ...)
     int i = 0;
     node_type = type;
     node_text = "";
-    node_children = _new list<AST*>();
+    node_children = new list<AST*>();
     va_start (arg_list, child_count);
     for (i = 0; i < child_count ; i++)
     {
@@ -87,7 +86,7 @@ void AST::addChild(AST* node)
 
 AST* AST::clone(void)
 {
-    AST* new_clone = _new AST( node_type, node_text );
+    AST* new_clone = new AST( node_type, node_text );
     list<AST*>::iterator it = node_children->begin();
     for(; it != node_children->end(); it++)
     {
