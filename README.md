@@ -1,28 +1,22 @@
 Project Template
 ==============================================
-Version:      0.1
-Created By:   Michael D. Lowis
-Email:        mike@mdlowis.com
+Version:      0.1<br>
+Created By:   Michael D. Lowis<br>
+Email:        <mike@mdlowis.com><br>
 
 About This Project
 ----------------------------------------------
-
+This is project implements a library of useful classes for developing recursive
+descent parsers in c++. The library provides a generic abstract syntax tree
+class, lexer and parser base classes, as well as a tree visistor class with a
+useful implementation for pretty printing an arbitrary syntax tree. Users of
+this library can link against it statically or dynamically.
 
 License
 ----------------------------------------------
 Unless explicitly stated otherwise, all code, documentation, and files contained
 within this repository are released under the BSD 2-clause license.
 See LICENSE.md for more details
-
-Requirements
-----------------------------------------------
-
-*   Some application (version info)
-*   Some library (version info)
-
-Installation
-----------------------------------------------
-
 
 Project Files and Directories
 ----------------------------------------------
@@ -37,29 +31,4 @@ Project Files and Directories
     LICENSE.md     File containing the license
     rakefile.rb    Rakefile containing build tasks
     README.md
-
-Know Issues or Bugs
-----------------------------------------------
-
-* Generic Issue #1
-* Generic Issue #2
-* Generic Issue #3
-
-Version History
-----------------------------------------------
-
-
-Feature Wish List
-----------------------------------------------
-
-This is a list of features are not yet supported but may be at some point in
-the future.
-
-* Generic feature description #1
-* Generic feature description #2
-* Generic feature description #3
-
-More Info
-----------------------------------------------
-
 
