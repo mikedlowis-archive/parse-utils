@@ -1,13 +1,13 @@
 Project Template
 ==============================================
-Version:      0.1<br>
-Created By:   Michael D. Lowis<br>
-Email:        <mike@mdlowis.com><br>
+    Version:      0.1
+    Created By:   Michael D. Lowis
+    Email:        mike@mdlowis.com
 
 About This Project
 ----------------------------------------------
-This is project implements a library of useful classes for developing recursive
-descent parsers in c++. The library provides a generic abstract syntax tree
+This project implements a library of useful classes for developing recursive
+descent parsers in c/c++. The library provides a generic abstract syntax tree
 class, lexer and parser base classes, as well as a tree visistor class with a
 useful implementation for pretty printing an arbitrary syntax tree. Users of
 this library can link against it statically or dynamically.
