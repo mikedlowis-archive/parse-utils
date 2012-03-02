@@ -73,9 +73,10 @@ void BTParser::match(TokenType_T type)
     {
         Token& tok = lookaheadToken(1);
         ostringstream oss;
-        oss << "Expected token type. Expected " << type << ", received " << tok.type() << ".";
+        oss << "Unexpected token type. Expected " << type << ", received " << tok.type() << ".";
         Exception ex( tok.line(), tok.column() );
         ex.setMessage(oss.str());
+        throw ex;
     }
 }
 
