@@ -1,4 +1,4 @@
-#include "ASTPrinter.h"
+#include "astprinter.h"
 
 using namespace std;
 
