@@ -15,45 +15,9 @@ LLKParser::LLKParser(int k_val, ILexer* lxer) : k(k_val), next(0), lexer(lxer)
 
 LLKParser::~LLKParser()
 {
-    if(lexer != NULL)
-    {
-        delete lexer;
-        // Input stream was deleted with th elexer so null it out
-        IParser::setInput((istream*)NULL);
-    }
     if (lookahead != NULL)
     {
         delete[] lookahead;
-    }
-}
-
-void LLKParser::setInput(char* in)
-{
-    IParser::setInput(in);
-    lexer->setInput(in);
-    for (int i = 0; i < k; i++)
-    {
-        consume();
-    }
-}
-
-void LLKParser::setInput(string& in)
-{
-    IParser::setInput(in);
-    lexer->setInput(in);
-    for (int i = 0; i < k; i++)
-    {
-        consume();
-    }
-}
-
-void LLKParser::setInput(istream* in)
-{
-    IParser::setInput(in);
-    lexer->setInput(in);
-    for (int i = 0; i < k; i++)
-    {
-        consume();
     }
 }
 

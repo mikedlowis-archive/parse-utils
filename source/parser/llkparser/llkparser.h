@@ -16,16 +16,10 @@ class LLKParser : public IParser
     public:
         LLKParser(int k_val, ILexer* lxer);
         ~LLKParser();
-
-        void setInput(char* in);
-        void setInput(string& in);
-        void setInput(istream* in);
-
         void         consume(void);
         void         match(TokenType_T type);
         Token&       lookaheadToken(int i);
         TokenType_T  lookaheadType(int i);
-        virtual AST* parse(void) = 0;
 };
 
 #endif

@@ -6,12 +6,10 @@
 #include <iostream>
 
 class IVisitor {
-    protected:
-        AST* ast;
     public:
-        IVisitor(AST* tree) : ast(tree) {};
-        ~IVisitor() { delete ast; }
-        void visit(AST* cur = NULL, int depth = 0);
+        IVisitor();
+        ~IVisitor();
+        void visit(AST* cur, int depth = 0);
     private:
         virtual void beforeVisit(AST* cur, int depth) = 0;
         virtual void afterVisit(AST* cur, int depth) = 0;
@@ -19,11 +17,6 @@ class IVisitor {
         virtual void afterChildren(AST* cur, int depth) = 0;
         virtual void beforeChild(AST* cur, int depth) = 0;
         virtual void afterChild(AST* cur, int depth) = 0;
-};
-
-class IVisitorFactory {
-    public:
-        virtual IVisitor* createIVisitor(AST* root) = 0;
 };
 
 #endif

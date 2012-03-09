@@ -25,31 +25,38 @@ using namespace std;
 /******************************************************************************
  * Public Functions
  *****************************************************************************/
-IParser::IParser() : input(NULL)
+IParser::IParser() : result(NULL), lexer(NULL)
+{
+}
+
+IParser::IParser(ILexer* lxr) : result(NULL), lexer(lxr)
 {
 }
 
 IParser::~IParser()
 {
-    if(input != NULL)
+    if(lexer != NULL)
     {
-        delete input;
+        delete lexer;
+    }
+
+    if(result != NULL)
+    {
+        delete result;
     }
 }
 
-void IParser::setInput(char* in)
+void IParser::input(ILexer* lxr)
 {
-    input = new istringstream( string( in ) );
+    lexer = lxr;
 }
 
-void IParser::setInput(string& in)
+const AST* IParser::ast() const
 {
-    input = new istringstream( in );
+    return result;
 }
 
-void IParser::setInput(istream* in)
+void IParser::process(IVisitor& visitor)
 {
-    input = in;
+    visitor.visit(result);
 }
-
-

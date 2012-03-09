@@ -20,21 +20,23 @@
 #include <string>
 #include <sstream>
 #include "ast.h"
+#include "ilexer.h"
 #include "ivisitor.h"
 
 using namespace std;
 
 class IParser {
-    private:
-        istream* input;
+    protected:
+        AST*    result;
+        ILexer* lexer;
     public:
         IParser();
+        IParser(ILexer* in);
         virtual ~IParser();
-        virtual AST* parse() = 0;
-
-        void setInput(char* in);
-        void setInput(string& in);
-        void setInput(istream* in);
+        virtual void parse() = 0;
+        virtual void input(ILexer* in);
+        virtual const AST* ast() const;
+        virtual void process(IVisitor& visitor);
 };
 
 #endif

@@ -1,36 +1,12 @@
 #include "btparser.h"
 #include "exception.h"
 
-BTParser::BTParser(ILexer* lxer) : lexer(lxer), current(0)
+BTParser::BTParser() : current(0)
 {
 }
 
 BTParser::~BTParser()
 {
-    if(lexer != NULL)
-    {
-        delete lexer;
-        // Input stream was deleted with the lexer so null it out
-        IParser::setInput((istream*)NULL);
-    }
-}
-
-void BTParser::setInput(char* in)
-{
-    IParser::setInput(in);
-    lexer->setInput(in);
-}
-
-void BTParser::setInput(string& in)
-{
-    IParser::setInput(in);
-    lexer->setInput(in);
-}
-
-void BTParser::setInput(istream* in)
-{
-    IParser::setInput(in);
-    lexer->setInput(in);
 }
 
 void BTParser::consume(void)

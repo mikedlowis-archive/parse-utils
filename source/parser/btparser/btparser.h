@@ -4,23 +4,16 @@
 #include <exception>
 #include <vector>
 #include "iparser.h"
-#include "ilexer.h"
-#include "ast.h"
 
 class BTParser : public IParser
 {
-    private:
-        ILexer* lexer;
+    protected:
         unsigned int current;
         std::vector<unsigned int> markers;
         std::vector<Token> lookahead;
     public:
-        BTParser(ILexer* lxer);
+        BTParser();
         ~BTParser();
-
-        void setInput(char* in);
-        void setInput(string& in);
-        void setInput(istream* in);
 
         void consume(void);
         void sync(unsigned int i);
@@ -32,8 +25,6 @@ class BTParser : public IParser
         void release(void);
         void seek(unsigned int index);
         bool isSpeculating(void);
-
-        virtual AST* parse(void) = 0;
 };
 
 #endif

@@ -6,11 +6,6 @@
 #include <sstream>
 
 class ASTPrinter : public IVisitor {
-    protected:
-        ostringstream stream;
-    public:
-        ASTPrinter(AST* root) : IVisitor(root) {};
-        string str();
     private:
         void beforeVisit(AST* cur, int depth);
         void afterVisit(AST* cur, int depth);
