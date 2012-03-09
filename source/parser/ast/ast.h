@@ -24,11 +24,11 @@ class AST
 
         AST& operator = (AST& rhs);
 
-        ASTNodeType type(void);
-        string      text(void);
+        ASTNodeType type(void) const;
+        string      text(void) const;
         list<AST*>* children(void);
         void        addChild(AST* node);
-        AST*        clone(void);
+        AST*        clone(void) const;
 };
 
 #endif

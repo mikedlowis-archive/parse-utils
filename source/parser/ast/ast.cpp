@@ -64,7 +64,7 @@ AST& AST::operator = (AST& rhs)
     return *this;
 }
 
-ASTNodeType AST::type(void)
+ASTNodeType AST::type(void) const
 {
     return node_type;
 }
@@ -74,7 +74,7 @@ list<AST*>* AST::children(void)
     return node_children;
 }
 
-string AST::text(void)
+string AST::text(void) const
 {
     return node_text;
 }
@@ -84,7 +84,7 @@ void AST::addChild(AST* node)
     node_children->push_back(node);
 }
 
-AST* AST::clone(void)
+AST* AST::clone(void) const
 {
     AST* new_clone = new AST( node_type, node_text );
     list<AST*>::iterator it = node_children->begin();
