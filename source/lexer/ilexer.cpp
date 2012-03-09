@@ -4,7 +4,7 @@
 
 using namespace std;
 
-ILexer::ILexer() : line(-1), column(-1)
+ILexer::ILexer(istream& in) : line(-1), column(-1), in_stream(in)
 {
 }
 
@@ -12,44 +12,20 @@ ILexer::~ILexer()
 {
 }
 
-void ILexer::setInput(char* in)
-{
-    line = 1;
-    column = 0;
-    input = new istringstream( string( in ) );
-    consume();
-}
-
-void ILexer::setInput(string& in)
-{
-    line = 1;
-    column = 0;
-    input = new istringstream( in );
-    consume();
-}
-
-void ILexer::setInput(istream* in)
-{
-    line = 1;
-    column = 0;
-    input = in;
-    consume();
-}
-
 bool ILexer::eof(void)
 {
-    return ((input == NULL) || (input->eof()));
+    return in_stream.eof();
 }
 
 void ILexer::consume(void)
 {
-    if(input->eof())
+    if(in_stream.eof())
     {
         current = EOF;
     }
     else
     {
-        current = input->get();
+        current = in_stream.get();
         if(current == '\n')
         {
             line++;
