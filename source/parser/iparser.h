@@ -23,8 +23,6 @@
 #include "ilexer.h"
 #include "ivisitor.h"
 
-using namespace std;
-
 class IParser {
     protected:
         AST*    result;

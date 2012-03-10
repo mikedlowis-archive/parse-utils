@@ -1,6 +1,7 @@
 #include <iostream>
 #include "astprinter.h"
 
+using namespace std;
 
 void ASTPrinter::beforeVisit(AST* cur, int depth)
 {

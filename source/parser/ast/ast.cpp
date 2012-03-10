@@ -3,6 +3,8 @@
 #include <string.h>
 #include <iostream>
 
+using namespace std;
+
 AST::AST(ASTNodeType type)
 {
     node_type = type;
@@ -69,6 +71,11 @@ ASTNodeType AST::type(void) const
     return node_type;
 }
 
+void AST::type(ASTNodeType typ)
+{
+    node_type = typ;
+}
+
 list<AST*>* AST::children(void)
 {
     return node_children;
@@ -77,6 +84,11 @@ list<AST*>* AST::children(void)
 string AST::text(void) const
 {
     return node_text;
+}
+
+void AST::text(std::string& txt)
+{
+    node_text = txt;
 }
 
 void AST::addChild(AST* node)

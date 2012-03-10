@@ -1,6 +1,8 @@
 #include "btparser.h"
 #include "exception.h"
 
+using namespace std;
+
 BTParser::BTParser() : current(0)
 {
 }
