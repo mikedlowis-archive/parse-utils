@@ -11,8 +11,8 @@ class ILexer
     protected:
         int line;
         int column;
-        char current;
         std::istream& in_stream;
+        char current;
 
     public:
         ILexer(std::istream& in);
