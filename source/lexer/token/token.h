@@ -15,19 +15,16 @@ class Token
     public:
         Token();
         Token(TokenType_T ttype, int line, int col);
-        Token(TokenType_T ttype, std::string ttext, int line, int col);
+        Token(TokenType_T ttype, const std::string& ttext, int line, int col);
 
         void type(TokenType_T typ);
-        TokenType_T type();
-
+        TokenType_T type() const;
         void text(std::string txt);
-        std::string text();
-
+        std::string text() const;
         void line(int ln);
-        int line();
-
+        int line() const;
         void column(int col);
-        int column();
+        int column() const;
 };
 
 #endif

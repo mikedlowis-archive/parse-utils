@@ -1,4 +1,3 @@
-#include <exception>
 #include "ilexer.h"
 #include "exception.h"
 
@@ -45,10 +44,8 @@ void ILexer::match(char x) {
     }
     else
     {
-        ostringstream oss;
-        oss << "Unexpected character. Expected " << x << ", received " << current << ".";
         Exception ex(line,column);
-        ex.setMessage(oss.str());
+        ex << "Unexpected character. Expected " << x << ", received " << current << ".";
         throw ex;
     }
 }

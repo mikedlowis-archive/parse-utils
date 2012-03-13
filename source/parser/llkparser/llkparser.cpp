@@ -9,7 +9,9 @@ LLKParser::LLKParser(int k_val, ILexer* lxer) : k(k_val), next(0), lexer(lxer)
     }
     else
     {
-        throw std::exception();
+        Exception ex(-1,-1);
+        ex << "Failed to initialize parser. No lexer was provided.";
+        throw ex;
     }
 }
 
@@ -38,7 +40,9 @@ void LLKParser::match(TokenType_T type)
     }
     else
     {
-        throw std::exception();
+        Exception ex( lookaheadToken(1) );
+        ex << "Unexpected token. Expected " << type << ", received " << lookaheadType(1);
+        throw ex;
     }
 }
 
