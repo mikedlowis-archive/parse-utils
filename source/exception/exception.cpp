@@ -1,20 +1,29 @@
 #include <sstream>
 #include "exception.h"
 
+Exception::Exception() throw() : std::exception()
+{
+}
+
 Exception::Exception(const Token& tok) throw() : std::exception(), ex_line(tok.line()), ex_column(tok.column())
-{
-}
-
-Exception::Exception(int line, int column) throw() : std::exception(), ex_line(line), ex_column(column)
-{
-}
-
-const char* Exception::what() const throw()
 {
     std::ostringstream oss;
     oss << "(ln " << ex_line << ", col " << ex_column << "): ";
     oss << ((Exception*)this)->message() << std::endl;
-    return oss.str().c_str();
+    ex_msg = oss.str();
+}
+
+Exception::Exception(int line, int column) throw() : std::exception(), ex_line(line), ex_column(column)
+{
+    std::ostringstream oss;
+    oss << "(ln " << ex_line << ", col " << ex_column << "): ";
+    oss << ((Exception*)this)->message() << std::endl;
+    ex_msg = oss.str();
+}
+
+const char* Exception::what() const throw()
+{
+    return ex_msg.c_str();
 }
 
 void Exception::message(const std::string& msg) throw()

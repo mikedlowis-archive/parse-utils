@@ -12,6 +12,7 @@ class Exception : public std::exception
         int ex_column;
         std::string ex_msg;
     public:
+        Exception() throw();
         Exception(const Token& tok) throw();
         Exception(int line, int column) throw();
         virtual ~Exception() throw() {};

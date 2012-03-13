@@ -1,9 +1,13 @@
 #include "scopestack.h"
+#include <iostream>
 
 using namespace std;
 
 ScopeStack::ScopeStack()
 {
+    // Initialize the stack
+    sym_table_t table;
+    scope_stack.push_front( table );
 }
 
 ScopeStack::~ScopeStack()
@@ -12,7 +16,8 @@ ScopeStack::~ScopeStack()
 
 void ScopeStack::startScope()
 {
-    scope_stack.push_front( sym_table_t() );
+    sym_table_t table;
+    scope_stack.push_front( table );
 }
 
 void ScopeStack::stopScope()
@@ -49,11 +54,28 @@ const Symbol* ScopeStack::lookup(const std::string& name)
 
 bool ScopeStack::isLocal(const std::string& name) const
 {
-    return false;
+    bool ret = false;
+    sym_table_t::const_iterator p_val = scope_stack.front().find(name);
+    if( p_val != scope_stack.front().end())
+    {
+        ret = true;
+    }
+    return ret;
 }
 
 bool ScopeStack::isGlobal(const std::string& name) const
 {
-    return false;
+    bool ret = false;
+    list<sym_table_t>::const_iterator it;
+    for(it = ++(scope_stack.begin()); it != scope_stack.end(); it++)
+    {
+        sym_table_t::const_iterator p_val = (*it).find(name);
+        if( p_val != (*it).end())
+        {
+            ret = true;
+            break;
+        }
+    }
+    return ret;
 }
 
