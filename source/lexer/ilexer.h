@@ -12,14 +12,13 @@ class ILexer
         int line;
         int column;
         std::istream& in_stream;
-        char current;
 
     public:
         ILexer(std::istream& in);
         virtual ~ILexer();
-        void consume(void);
-        void match(char x);
-        bool eof(void);
+        virtual void consume(void) = 0;
+        virtual void match(char x) = 0;
+        virtual bool eof(void);
         virtual Token next(void) = 0;
 };
 
