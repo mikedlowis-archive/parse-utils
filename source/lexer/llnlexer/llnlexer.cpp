@@ -12,7 +12,7 @@ LLNLexer::~LLNLexer()
 void LLNLexer::consume(void)
 {
     cur_idx++;
-    if(cur_idx == la_buffer.size())
+    if(cur_idx >= la_buffer.size())
     {
         cur_idx = 0;
         la_buffer.clear();
@@ -37,8 +37,13 @@ void LLNLexer::match(char match)
 void LLNLexer::sync(unsigned int i)
 {
     unsigned int next_index = cur_idx + i - 1;
-    unsigned int max_index = (la_buffer.size() == 0) ? 0 : (la_buffer.size() - 1);
-    if( next_index >= max_index )
+    unsigned int max_index = (la_buffer.size() - 1);
+
+    if( la_buffer.size() == 0 )
+    {
+        fill(i);
+    }
+    else if( next_index >= max_index )
     {
         fill( next_index - max_index);
     }
@@ -47,7 +52,7 @@ void LLNLexer::sync(unsigned int i)
 void LLNLexer::fill(unsigned int n)
 {
     unsigned int i = 0;
-    for (i = 0; i <= n; i++)
+    for (i = 0; i < n; i++)
     {
         la_buffer.push_back( in_stream.get() );
     }

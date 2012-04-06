@@ -25,8 +25,13 @@ void BTParser::consume(void)
 void BTParser::sync(unsigned int i)
 {
     unsigned int next_index = current + i - 1;
-    unsigned int max_index = (lookahead.size() == 0) ? 0 : (lookahead.size() - 1);
-    if( next_index >= max_index )
+    unsigned int max_index = (lookahead.size() - 1);
+
+    if( lookahead.size() == 0 )
+    {
+        fill(i);
+    }
+    else if( next_index >= max_index )
     {
         fill( next_index - max_index);
     }
@@ -35,7 +40,7 @@ void BTParser::sync(unsigned int i)
 void BTParser::fill(unsigned int n)
 {
     unsigned int i = 0;
-    for (i = 0; i <= n; i++)
+    for (i = 0; i < n; i++)
     {
         lookahead.push_back( lexer->next() );
     }
