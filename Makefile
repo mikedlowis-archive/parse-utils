@@ -42,7 +42,7 @@ $(STATIC_NAME): $(OBJ_FILES)
 $(OBJ_FILES): %.o : %.$(SRC_FTYPE)
 
 clean:
-	$(RM) -f $(foreach dir,$(SRC_DIRS), $(dir)*.o)
-	$(RM) -f $(SHARED_NAME)
-	$(RM) -f $(STATIC_NAME)
+	$(RM) $(foreach dir,$(SRC_DIRS), $(dir)*.o)
+	$(RM) $(SHARED_NAME)
+	$(RM) $(STATIC_NAME)
 
