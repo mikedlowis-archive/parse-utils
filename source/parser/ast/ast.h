@@ -4,6 +4,7 @@
 #include <stdarg.h>
 #include <list>
 #include <string>
+#include "token.h"
 
 typedef unsigned int ASTNodeType;
 
@@ -15,6 +16,7 @@ class AST
         std::list<AST*>* node_children;
     public:
         AST(ASTNodeType type);
+        AST(Token tok);
         AST(ASTNodeType type, const char* text);
         AST(ASTNodeType type, std::string text);
         AST(ASTNodeType type, int child_count, ...);

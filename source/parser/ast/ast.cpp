@@ -12,6 +12,13 @@ AST::AST(ASTNodeType type)
     node_children = new list<AST*>();
 }
 
+AST::AST(Token tok)
+{
+    node_type = tok.type();
+    node_text = tok.text();
+    node_children = new list<AST*>();
+}
+
 AST::AST(ASTNodeType type, const char* text)
 {
     node_type = type;
