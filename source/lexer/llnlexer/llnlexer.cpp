@@ -11,12 +11,23 @@ LLNLexer::~LLNLexer()
 
 void LLNLexer::consume(void)
 {
+    if( la_buffer.at(cur_idx) == '\n' )
+    {
+        line++;
+        column = 0;
+    }
+    else
+    {
+        column++;
+    }
+
     cur_idx++;
     if(cur_idx >= la_buffer.size())
     {
         cur_idx = 0;
         la_buffer.clear();
     }
+
     sync(1);
 }
 
