@@ -53,3 +53,15 @@ int Token::column() const
     return tok_col;
 }
 
+bool Token::operator ==(const Token& rhs) const
+{
+    return ( (tok_type == rhs.type())   &&
+             (tok_line == rhs.line())   &&
+             (tok_col  == rhs.column()) &&
+             (tok_text.compare( rhs.text() ) == 0) );
+}
+
+bool Token::operator !=(const Token& rhs) const
+{
+    return !( *this == rhs );
+}

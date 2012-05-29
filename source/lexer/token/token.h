@@ -25,6 +25,8 @@ class Token
         int line() const;
         void column(int col);
         int column() const;
+        bool operator ==(const Token &other) const;
+        bool operator !=(const Token &other) const;
 };
 
 #endif
