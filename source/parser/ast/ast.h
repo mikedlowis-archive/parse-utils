@@ -20,6 +20,7 @@ class AST
         AST(ASTNodeType type, const char* text);
         AST(ASTNodeType type, std::string text);
         AST(ASTNodeType type, int child_count, ...);
+        AST(ASTNodeType type, std::string text, int child_count, ...);
         virtual ~AST();
 
         AST& operator = (AST& rhs);

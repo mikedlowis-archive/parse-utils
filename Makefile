@@ -7,6 +7,24 @@
 #
 ###############################################################################
 
+# Utility Function Definitions
+#-----------------------------
+# Function for generating an file list
+flist = $(shell env find $(1) -name *.$(strip $(2)) -print)
+
+# Function for generating an file list
+dlist = $(shell env find $(1) -type d -print)
+
+# Function for generating an include list
+incdirs = $(addprefix -I, $(call dlist, $(1)))
+
+# Function for generating file dependencies
+define make-depend
+  $(CXX) $(CXXFLAGS) -M $1 | \
+  sed -e 's,\($(notdir $2)\) *:,$(dir $2)\1 $(subst .o,.d,$2): ,' \
+  > $(subst .o,.d,$2)
+endef
+
 # Project and Artifact Names
 #---------------------------
 PROJ_NAME   = parseutils
@@ -15,12 +33,20 @@ STATIC_NAME = lib$(PROJ_NAME).a
 
 # File and Directory Settings
 #----------------------------
+# Root Directories
 SRC_ROOT  = source/
-SRC_FTYPE = cpp
-SRC_FILES = $(shell find $(SRC_ROOT) -name *.$(SRC_FTYPE) -print)
-OBJ_FILES = $(SRC_FILES:%.$(SRC_FTYPE)=%.o)
-SRC_DIRS  = $(dir $(SRC_FILES))
-INC_DIRS  = $(addprefix -I,$(SRC_DIRS))
+# File Extensions
+SRC_EXT = cpp
+# Source File Lists
+SRC_FILES  = $(call flist, $(SRC_ROOT), $(SRC_EXT))
+
+# Object File Lists
+SRC_OBJS = $(SRC_FILES:%.$(SRC_EXT)=%.o)
+# Dependecy File Lists
+SRC_DEPS  = $(SRC_OBJS:%.o=%.d)
+# Include Directories
+INC_DIRS = $(call incdirs, $(SRC_ROOT))
+
 
 # Compiler and Linker Options
 #----------------------------
@@ -33,16 +59,25 @@ all: shared static
 shared: $(SHARED_NAME)
 static: $(STATIC_NAME)
 
-$(SHARED_NAME): $(OBJ_FILES)
-	$(CXX) $(CXX_FLAGS) -shared -o $@ $(OBJ_FILES)
+# Binaries
+$(SHARED_NAME): $(SRC_OBJS)
+	@echo Linking $@...
+	@$(CXX) $(CXXFLAGS) -shared -o $@ $(SRC_OBJS)
 
-$(STATIC_NAME): $(OBJ_FILES)
-	$(AR) $(ARFLAGS) $@ $(OBJ_FILES)
+$(STATIC_NAME): $(SRC_OBJS)
+	@echo Linking $@...
+	@$(AR) $(ARFLAGS) -o $@ $(SRC_OBJS)
 
-$(OBJ_FILES): %.o : %.$(SRC_FTYPE)
+# Object Files
+$(SRC_OBJS): %.o : %.$(SRC_EXT)
+	@echo $<
+	@$(call make-depend,$<,$@)
+	@$(CXX) -c $(CXXFLAGS) -o $@ $<
 
+# Cleanup
 clean:
-	$(RM) $(foreach dir,$(SRC_DIRS), $(dir)*.o)
-	$(RM) $(SHARED_NAME)
-	$(RM) $(STATIC_NAME)
+	@$(RM) $(SRC_OBJS)
+	@$(RM) $(SRC_DEPS)
+	@$(RM) $(SHARED_NAME)
+	@$(RM) $(STATIC_NAME)
 

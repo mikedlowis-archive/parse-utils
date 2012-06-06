@@ -48,6 +48,21 @@ AST::AST(ASTNodeType type, int child_count, ...)
     va_end(arg_list);
 }
 
+AST::AST(ASTNodeType type, std::string text, int child_count, ...)
+{
+    va_list arg_list;
+    int i = 0;
+    node_type = type;
+    node_text = text;
+    node_children = new list<AST*>();
+    va_start (arg_list, child_count);
+    for (i = 0; i < child_count ; i++)
+    {
+        node_children->push_back( (AST*)va_arg(arg_list, AST*) );
+    }
+    va_end(arg_list);
+}
+
 AST::~AST()
 {
     list<AST*>::iterator it = node_children->begin();
