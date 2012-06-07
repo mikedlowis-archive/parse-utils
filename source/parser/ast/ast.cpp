@@ -1,4 +1,5 @@
 #include "ast.h"
+#include "ivisitor.h"
 #include <sstream>
 #include <string.h>
 #include <iostream>
@@ -98,7 +99,7 @@ void AST::type(ASTNodeType typ)
     node_type = typ;
 }
 
-list<AST*>* AST::children(void)
+list<AST*>* AST::children(void) const
 {
     return node_children;
 }
@@ -127,5 +128,50 @@ AST* AST::clone(void) const
         new_clone->addChild( (*it)->clone() );
     }
     return new_clone;
+}
+
+bool AST::operator ==(const AST& rhs) const
+{
+    bool ret = true;
+    std::list<AST*>* l_children;
+    std::list<AST*>* r_children;
+    std::list<AST*>::iterator lit;
+    std::list<AST*>::iterator rit;
+
+    // Setup our locals
+    l_children = children();
+    r_children = rhs.children();
+    lit = l_children->begin();
+    rit = r_children->begin();
+
+    // Check this node for equality
+    ret &= (type() == rhs.type());
+    ret &= ( 0 == text().compare( rhs.text() ) );
+    ret &= (l_children->size() == r_children->size());
+
+    // If we are still equal then check the children nodes
+    while( (lit != l_children->end()) && (rit != r_children->end()) )
+    {
+        ret &= ((NULL != *lit) && (NULL != *rit));
+        if( ret )
+        {
+            AST& left = *(*lit);
+            AST& right = *(*rit);
+            ret &= (left == right);
+        }
+        lit++;
+        rit++;
+    }
+    return ret;
+}
+
+bool AST::operator !=(const AST& rhs) const
+{
+    return !( *this == rhs );
+}
+
+void AST::process(IVisitor& visitor)
+{
+    visitor.visit( this );
 }
 
