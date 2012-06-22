@@ -1,0 +1,11 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_i_marker.html#a68c539e79c3052ba7addf090dfd05985" title="IMarker::advance" alt="" coords="177,5,297,35"/>
+<area shape="rect" id="node5" href="$class_i_buffer.html#ae73a7e66aaca98fcaca9e53305264e04" title="IBuffer::clear" alt="" coords="191,59,284,88"/>
+<area shape="rect" id="node7" href="$class_i_marker.html#ae6fda228fa071a9720e7d2309d47ac6e" title="IMarker::isMarked" alt="" coords="175,112,300,141"/>
+<area shape="rect" id="node9" href="$class_i_marker.html#a0e9628e8c66b493ff331abab55c744da" title="IMarker::location" alt="" coords="351,215,468,244"/>
+<area shape="rect" id="node11" href="$class_i_marker.html#a58086bbf091c5b49c15464a070fec171" title="IMarker::seek" alt="" coords="187,165,288,195"/>
+<area shape="rect" id="node14" href="$class_i_buffer.html#a70e50087fc075f8487ea14a323ef2012" title="IBuffer::size" alt="" coords="364,321,455,351"/>
+<area shape="rect" id="node16" href="$class_i_buffer.html#aa61fe968b6058c01883bf4a464e7089f" title="IBuffer::sync" alt="" coords="191,269,284,299"/>
+<area shape="rect" id="node18" href="$class_i_buffer.html#afc6767d57494a8020611c90f31f3f9df" title="IBuffer::fill" alt="" coords="371,268,448,297"/>
+<area shape="rect" id="node20" href="$class_i_buffer.html#aa9b8125ddc806077ad9e7faa7dbda64d" title="IBuffer::load" alt="" coords="517,268,608,297"/>
+</map>

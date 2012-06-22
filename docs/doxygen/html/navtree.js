@@ -6,11 +6,11 @@ var NAVTREE =
       [ "ASTPrinter", "class_a_s_t_printer.html", null ],
       [ "BTParser", "class_b_t_parser.html", null ],
       [ "Exception", "class_exception.html", null ],
+      [ "IBuffer", "class_i_buffer.html", null ],
       [ "ILexer", "class_i_lexer.html", null ],
       [ "IMarker", "class_i_marker.html", null ],
       [ "IParser", "class_i_parser.html", null ],
       [ "IVisitor", "class_i_visitor.html", null ],
-      [ "LLKParser", "class_l_l_k_parser.html", null ],
       [ "LLNLexer", "class_l_l_n_lexer.html", null ],
       [ "ScopeStack", "class_scope_stack.html", null ],
       [ "Symbol", "class_symbol.html", null ],
@@ -24,11 +24,11 @@ var NAVTREE =
         [ "LLNLexer", "class_l_l_n_lexer.html", null ]
       ] ],
       [ "IMarker", "class_i_marker.html", [
-        [ "BTParser", "class_b_t_parser.html", null ]
+        [ "BTParser", "class_b_t_parser.html", null ],
+        [ "IBuffer", "class_i_buffer.html", null ]
       ] ],
       [ "IParser", "class_i_parser.html", [
-        [ "BTParser", "class_b_t_parser.html", null ],
-        [ "LLKParser", "class_l_l_k_parser.html", null ]
+        [ "BTParser", "class_b_t_parser.html", null ]
       ] ],
       [ "IVisitor", "class_i_visitor.html", [
         [ "ASTPrinter", "class_a_s_t_printer.html", null ]
@@ -39,6 +39,9 @@ var NAVTREE =
     ] ],
     [ "Class Members", "functions.html", null ],
     [ "File List", "files.html", [
+      [ "source/buffer/ibuffer.cpp", "ibuffer_8cpp.html", null ],
+      [ "source/buffer/ibuffer.d", "ibuffer_8d.html", null ],
+      [ "source/buffer/ibuffer.h", "ibuffer_8h.html", null ],
       [ "source/exception/exception.cpp", "exception_8cpp.html", null ],
       [ "source/exception/exception.d", "exception_8d.html", null ],
       [ "source/exception/exception.h", "exception_8h.html", null ],
@@ -63,9 +66,6 @@ var NAVTREE =
       [ "source/parser/btparser/btparser.cpp", "btparser_8cpp.html", null ],
       [ "source/parser/btparser/btparser.d", "btparser_8d.html", null ],
       [ "source/parser/btparser/btparser.h", "btparser_8h.html", null ],
-      [ "source/parser/llkparser/llkparser.cpp", "llkparser_8cpp.html", null ],
-      [ "source/parser/llkparser/llkparser.d", "llkparser_8d.html", null ],
-      [ "source/parser/llkparser/llkparser.h", "llkparser_8h.html", null ],
       [ "source/symbol/scopestack.cpp", "scopestack_8cpp.html", null ],
       [ "source/symbol/scopestack.d", "scopestack_8d.html", null ],
       [ "source/symbol/scopestack.h", "scopestack_8h.html", null ],

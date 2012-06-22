@@ -92,32 +92,26 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00009"></a><a class="code" href="class_b_t_parser.html">00009</a> <span class="keyword">class </span><a class="code" href="class_b_t_parser.html">BTParser</a> : <span class="keyword">public</span> <a class="code" href="class_i_marker.html">IMarker</a>, <span class="keyword">public</span> <a class="code" href="class_i_parser.html">IParser</a>
 <a name="l00010"></a>00010 {
 <a name="l00011"></a>00011     <span class="keyword">protected</span>:
-<a name="l00012"></a>00012         <span class="comment">//unsigned int current;</span>
-<a name="l00013"></a>00013         <span class="comment">//std::vector&lt;unsigned int&gt; markers;</span>
-<a name="l00014"></a><a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">00014</a>         std::vector&lt;Token&gt; <a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">lookahead</a>;
-<a name="l00015"></a>00015     <span class="keyword">public</span>:
-<a name="l00016"></a>00016         <a class="code" href="class_b_t_parser.html#ad9495eabeaf69d91c5f26131cabd3ec4">BTParser</a>();
-<a name="l00017"></a>00017         <span class="keyword">virtual</span> <a class="code" href="class_b_t_parser.html#a5965c4cf0baf950be976a0a2932eec2c">~BTParser</a>();
-<a name="l00018"></a>00018 
-<a name="l00019"></a>00019         <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#a9d72bba86b16427b0b03e91113b0f027">consume</a>(<span class="keywordtype">void</span>);
-<a name="l00020"></a>00020         <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#a762e16322aec6e50af51c2b6377d86fe">sync</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);
-<a name="l00021"></a>00021         <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#a366b4477388d2cd7fd655b36342f882c">fill</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n);
-<a name="l00022"></a>00022         <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#ad8fb9348dd9bc2e65a08033dd2539a03">match</a>(<a class="code" href="token_8h.html#abf05bcc4c1b09928131e6afd3b768a77">TokenType_T</a> type);
-<a name="l00023"></a>00023         <a class="code" href="class_token.html">Token</a>&amp; <a class="code" href="class_b_t_parser.html#a2674f280bd3000751a100b45ac3899e2">lookaheadToken</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);
-<a name="l00024"></a>00024         <a class="code" href="token_8h.html#abf05bcc4c1b09928131e6afd3b768a77">TokenType_T</a> <a class="code" href="class_b_t_parser.html#a01abded048ed1573e03867f7f2316583">lookaheadType</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);
-<a name="l00025"></a>00025         <span class="comment">//unsigned int mark(void);</span>
-<a name="l00026"></a>00026         <span class="comment">//void release(void);</span>
-<a name="l00027"></a>00027         <span class="comment">//void seek(unsigned int index);</span>
-<a name="l00028"></a>00028         <span class="comment">//bool isSpeculating(void);</span>
-<a name="l00029"></a>00029 };
-<a name="l00030"></a>00030 
-<a name="l00031"></a>00031 <span class="preprocessor">#endif</span>
+<a name="l00012"></a><a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">00012</a>         std::vector&lt;Token&gt; <a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">lookahead</a>;
+<a name="l00013"></a>00013     <span class="keyword">public</span>:
+<a name="l00014"></a>00014         <a class="code" href="class_b_t_parser.html#ad9495eabeaf69d91c5f26131cabd3ec4">BTParser</a>();
+<a name="l00015"></a>00015         <span class="keyword">virtual</span> <a class="code" href="class_b_t_parser.html#a5965c4cf0baf950be976a0a2932eec2c">~BTParser</a>();
+<a name="l00016"></a>00016 
+<a name="l00017"></a>00017         <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#a9d72bba86b16427b0b03e91113b0f027">consume</a>(<span class="keywordtype">void</span>);
+<a name="l00018"></a>00018         <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#a762e16322aec6e50af51c2b6377d86fe">sync</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);
+<a name="l00019"></a>00019         <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#a366b4477388d2cd7fd655b36342f882c">fill</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> n);
+<a name="l00020"></a>00020         <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#ad8fb9348dd9bc2e65a08033dd2539a03">match</a>(<a class="code" href="token_8h.html#abf05bcc4c1b09928131e6afd3b768a77">TokenType_T</a> type);
+<a name="l00021"></a>00021         <a class="code" href="class_token.html">Token</a>&amp; <a class="code" href="class_b_t_parser.html#a2674f280bd3000751a100b45ac3899e2">lookaheadToken</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);
+<a name="l00022"></a>00022         <a class="code" href="token_8h.html#abf05bcc4c1b09928131e6afd3b768a77">TokenType_T</a> <a class="code" href="class_b_t_parser.html#a01abded048ed1573e03867f7f2316583">lookaheadType</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i);
+<a name="l00023"></a>00023 };
+<a name="l00024"></a>00024 
+<a name="l00025"></a>00025 <span class="preprocessor">#endif</span>
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="btparser_8h.html">btparser.h</a>      </li>
-      <li class="footer">Generated on Fri Jun 22 2012 13:47:23 for Parse Utils by&#160;
+      <li class="footer">Generated on Fri Jun 22 2012 14:11:42 for Parse Utils by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>
