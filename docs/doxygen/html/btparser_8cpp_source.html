@@ -86,7 +86,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00003"></a>00003 
 <a name="l00004"></a>00004 <span class="keyword">using namespace </span>std;
 <a name="l00005"></a>00005 
-<a name="l00006"></a><a class="code" href="class_b_t_parser.html#ad9495eabeaf69d91c5f26131cabd3ec4">00006</a> <a class="code" href="class_b_t_parser.html#ad9495eabeaf69d91c5f26131cabd3ec4">BTParser::BTParser</a>() : current(0)
+<a name="l00006"></a><a class="code" href="class_b_t_parser.html#ad9495eabeaf69d91c5f26131cabd3ec4">00006</a> <a class="code" href="class_b_t_parser.html#ad9495eabeaf69d91c5f26131cabd3ec4">BTParser::BTParser</a>()
 <a name="l00007"></a>00007 {
 <a name="l00008"></a>00008 }
 <a name="l00009"></a>00009 
@@ -96,27 +96,27 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00013"></a>00013 
 <a name="l00014"></a><a class="code" href="class_b_t_parser.html#a9d72bba86b16427b0b03e91113b0f027">00014</a> <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#a9d72bba86b16427b0b03e91113b0f027">BTParser::consume</a>(<span class="keywordtype">void</span>)
 <a name="l00015"></a>00015 {
-<a name="l00016"></a>00016     <a class="code" href="class_b_t_parser.html#a29930e6537cb65bbefe1962763372165">current</a>++;
-<a name="l00017"></a>00017     <span class="keywordflow">if</span>((<a class="code" href="class_b_t_parser.html#a29930e6537cb65bbefe1962763372165">current</a> == <a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">lookahead</a>.size()) &amp;&amp; !<a class="code" href="class_b_t_parser.html#aa000adcfcb26aea600078ad2295eab8f">isSpeculating</a>())
+<a name="l00016"></a>00016     advance();
+<a name="l00017"></a>00017     <span class="keywordflow">if</span>((location() == lookahead.size()) &amp;&amp; !isMarked())
 <a name="l00018"></a>00018     {
-<a name="l00019"></a>00019         <a class="code" href="class_b_t_parser.html#a29930e6537cb65bbefe1962763372165">current</a> = 0;
-<a name="l00020"></a>00020         <a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">lookahead</a>.clear();
+<a name="l00019"></a>00019         seek(0);
+<a name="l00020"></a>00020         lookahead.clear();
 <a name="l00021"></a>00021     }
-<a name="l00022"></a>00022     <a class="code" href="class_b_t_parser.html#a762e16322aec6e50af51c2b6377d86fe">sync</a>(1);
+<a name="l00022"></a>00022     sync(1);
 <a name="l00023"></a>00023 }
 <a name="l00024"></a>00024 
 <a name="l00025"></a><a class="code" href="class_b_t_parser.html#a762e16322aec6e50af51c2b6377d86fe">00025</a> <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#a762e16322aec6e50af51c2b6377d86fe">BTParser::sync</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i)
 <a name="l00026"></a>00026 {
-<a name="l00027"></a>00027     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> next_index = <a class="code" href="class_b_t_parser.html#a29930e6537cb65bbefe1962763372165">current</a> + i - 1;
-<a name="l00028"></a>00028     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max_index = (<a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">lookahead</a>.size() - 1);
+<a name="l00027"></a>00027     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> next_index = location() + i - 1;
+<a name="l00028"></a>00028     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> max_index = (lookahead.size() - 1);
 <a name="l00029"></a>00029 
-<a name="l00030"></a>00030     <span class="keywordflow">if</span>( <a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">lookahead</a>.size() == 0 )
+<a name="l00030"></a>00030     <span class="keywordflow">if</span>( lookahead.size() == 0 )
 <a name="l00031"></a>00031     {
-<a name="l00032"></a>00032         <a class="code" href="class_b_t_parser.html#a366b4477388d2cd7fd655b36342f882c">fill</a>(i);
+<a name="l00032"></a>00032         fill(i);
 <a name="l00033"></a>00033     }
 <a name="l00034"></a>00034     <span class="keywordflow">else</span> <span class="keywordflow">if</span>( next_index &gt;= max_index )
 <a name="l00035"></a>00035     {
-<a name="l00036"></a>00036         <a class="code" href="class_b_t_parser.html#a366b4477388d2cd7fd655b36342f882c">fill</a>( next_index - max_index);
+<a name="l00036"></a>00036         fill( next_index - max_index);
 <a name="l00037"></a>00037     }
 <a name="l00038"></a>00038 }
 <a name="l00039"></a>00039 
@@ -125,64 +125,64 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <a name="l00042"></a>00042     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i = 0;
 <a name="l00043"></a>00043     <span class="keywordflow">for</span> (i = 0; i &lt; n; i++)
 <a name="l00044"></a>00044     {
-<a name="l00045"></a>00045         <a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">lookahead</a>.push_back( <a class="code" href="class_i_parser.html#a2c89fe9ae1c200eda69c78f7441dea00">lexer</a>-&gt;<a class="code" href="class_i_lexer.html#a6f5098fda43f68b01d2e7a2a7158c50d">next</a>() );
+<a name="l00045"></a>00045         lookahead.push_back( lexer-&gt;next() );
 <a name="l00046"></a>00046     }
 <a name="l00047"></a>00047 }
 <a name="l00048"></a>00048 
 <a name="l00049"></a><a class="code" href="class_b_t_parser.html#ad8fb9348dd9bc2e65a08033dd2539a03">00049</a> <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#ad8fb9348dd9bc2e65a08033dd2539a03">BTParser::match</a>(<a class="code" href="token_8h.html#abf05bcc4c1b09928131e6afd3b768a77">TokenType_T</a> type)
 <a name="l00050"></a>00050 {
-<a name="l00051"></a>00051     <span class="keywordflow">if</span>( <a class="code" href="class_b_t_parser.html#a01abded048ed1573e03867f7f2316583">lookaheadType</a>(1) == type )
+<a name="l00051"></a>00051     <span class="keywordflow">if</span>( lookaheadType(1) == type )
 <a name="l00052"></a>00052     {
-<a name="l00053"></a>00053         <a class="code" href="class_b_t_parser.html#a9d72bba86b16427b0b03e91113b0f027">consume</a>();
+<a name="l00053"></a>00053         consume();
 <a name="l00054"></a>00054     }
 <a name="l00055"></a>00055     <span class="keywordflow">else</span>
 <a name="l00056"></a>00056     {
-<a name="l00057"></a>00057         <a class="code" href="class_exception.html">Exception</a> ex( <a class="code" href="class_b_t_parser.html#a2674f280bd3000751a100b45ac3899e2">lookaheadToken</a>(1) );
-<a name="l00058"></a>00058         ex &lt;&lt; <span class="stringliteral">&quot;Unexpected token type. Expected &quot;</span> &lt;&lt; type &lt;&lt; <span class="stringliteral">&quot;, received &quot;</span> &lt;&lt; <a class="code" href="class_b_t_parser.html#a2674f280bd3000751a100b45ac3899e2">lookaheadToken</a>(1).<a class="code" href="class_token.html#af7a5db637926db45f92522f7bc207207">type</a>() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;
+<a name="l00057"></a>00057         <a class="code" href="class_exception.html">Exception</a> ex( lookaheadToken(1) );
+<a name="l00058"></a>00058         ex &lt;&lt; <span class="stringliteral">&quot;Unexpected token type. Expected &quot;</span> &lt;&lt; type &lt;&lt; <span class="stringliteral">&quot;, received &quot;</span> &lt;&lt; lookaheadToken(1).type() &lt;&lt; <span class="stringliteral">&quot;.&quot;</span>;
 <a name="l00059"></a>00059         <span class="keywordflow">throw</span> ex;
 <a name="l00060"></a>00060     }
 <a name="l00061"></a>00061 }
 <a name="l00062"></a>00062 
 <a name="l00063"></a><a class="code" href="class_b_t_parser.html#a2674f280bd3000751a100b45ac3899e2">00063</a> <a class="code" href="class_token.html">Token</a>&amp; <a class="code" href="class_b_t_parser.html#a2674f280bd3000751a100b45ac3899e2">BTParser::lookaheadToken</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i)
 <a name="l00064"></a>00064 {
-<a name="l00065"></a>00065     <a class="code" href="class_b_t_parser.html#a762e16322aec6e50af51c2b6377d86fe">sync</a>(i);
-<a name="l00066"></a>00066     <span class="keywordflow">return</span> <a class="code" href="class_b_t_parser.html#a796693745ebe354914eeacddba20f109">lookahead</a>.at( <a class="code" href="class_b_t_parser.html#a29930e6537cb65bbefe1962763372165">current</a> + i - 1 );
+<a name="l00065"></a>00065     sync(i);
+<a name="l00066"></a>00066     <span class="keywordflow">return</span> lookahead.at( location() + i - 1 );
 <a name="l00067"></a>00067 }
 <a name="l00068"></a>00068 
 <a name="l00069"></a><a class="code" href="class_b_t_parser.html#a01abded048ed1573e03867f7f2316583">00069</a> <a class="code" href="token_8h.html#abf05bcc4c1b09928131e6afd3b768a77">TokenType_T</a> <a class="code" href="class_b_t_parser.html#a01abded048ed1573e03867f7f2316583">BTParser::lookaheadType</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> i)
 <a name="l00070"></a>00070 {
-<a name="l00071"></a>00071     <span class="keywordflow">return</span> <a class="code" href="class_b_t_parser.html#a2674f280bd3000751a100b45ac3899e2">lookaheadToken</a>(i).<a class="code" href="class_token.html#af7a5db637926db45f92522f7bc207207">type</a>();
+<a name="l00071"></a>00071     <span class="keywordflow">return</span> lookaheadToken(i).type();
 <a name="l00072"></a>00072 }
 <a name="l00073"></a>00073 
-<a name="l00074"></a><a class="code" href="class_b_t_parser.html#a9decf824eda1b2c893e170a0e8f736f0">00074</a> <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> <a class="code" href="class_b_t_parser.html#a9decf824eda1b2c893e170a0e8f736f0">BTParser::mark</a>(<span class="keywordtype">void</span>)
-<a name="l00075"></a>00075 {
-<a name="l00076"></a>00076     <a class="code" href="class_b_t_parser.html#aae8dc94330bb217be99ab2a8f6af005d">markers</a>.push_back(<a class="code" href="class_b_t_parser.html#a29930e6537cb65bbefe1962763372165">current</a>);
-<a name="l00077"></a>00077     <span class="keywordflow">return</span> <a class="code" href="class_b_t_parser.html#a29930e6537cb65bbefe1962763372165">current</a>;
-<a name="l00078"></a>00078 }
-<a name="l00079"></a>00079 
-<a name="l00080"></a><a class="code" href="class_b_t_parser.html#a0f7650612e327774ea163488f01efd5c">00080</a> <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#a0f7650612e327774ea163488f01efd5c">BTParser::release</a>(<span class="keywordtype">void</span>)
-<a name="l00081"></a>00081 {
-<a name="l00082"></a>00082     <span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> marker = <a class="code" href="class_b_t_parser.html#aae8dc94330bb217be99ab2a8f6af005d">markers</a>.back();
-<a name="l00083"></a>00083     <a class="code" href="class_b_t_parser.html#aae8dc94330bb217be99ab2a8f6af005d">markers</a>.pop_back();
-<a name="l00084"></a>00084     <a class="code" href="class_b_t_parser.html#af6d31bfc4d025666ea1916ecf48602e2">seek</a>(marker);
-<a name="l00085"></a>00085 }
-<a name="l00086"></a>00086 
-<a name="l00087"></a><a class="code" href="class_b_t_parser.html#af6d31bfc4d025666ea1916ecf48602e2">00087</a> <span class="keywordtype">void</span> <a class="code" href="class_b_t_parser.html#af6d31bfc4d025666ea1916ecf48602e2">BTParser::seek</a>(<span class="keywordtype">unsigned</span> <span class="keywordtype">int</span> index)
-<a name="l00088"></a>00088 {
-<a name="l00089"></a>00089     <a class="code" href="class_b_t_parser.html#a29930e6537cb65bbefe1962763372165">current</a> = index;
-<a name="l00090"></a>00090 }
-<a name="l00091"></a>00091 
-<a name="l00092"></a><a class="code" href="class_b_t_parser.html#aa000adcfcb26aea600078ad2295eab8f">00092</a> <span class="keywordtype">bool</span> <a class="code" href="class_b_t_parser.html#aa000adcfcb26aea600078ad2295eab8f">BTParser::isSpeculating</a>(<span class="keywordtype">void</span>)
-<a name="l00093"></a>00093 {
-<a name="l00094"></a>00094     <span class="keywordflow">return</span> (<a class="code" href="class_b_t_parser.html#aae8dc94330bb217be99ab2a8f6af005d">markers</a>.size() &gt; 0);
-<a name="l00095"></a>00095 }
+<a name="l00074"></a>00074 <span class="comment">//unsigned int BTParser::mark(void)</span>
+<a name="l00075"></a>00075 <span class="comment">//{</span>
+<a name="l00076"></a>00076 <span class="comment">//    markers.push_back(current);</span>
+<a name="l00077"></a>00077 <span class="comment">//    return current;</span>
+<a name="l00078"></a>00078 <span class="comment">//}</span>
+<a name="l00079"></a>00079 <span class="comment">//</span>
+<a name="l00080"></a>00080 <span class="comment">//void BTParser::release(void)</span>
+<a name="l00081"></a>00081 <span class="comment">//{</span>
+<a name="l00082"></a>00082 <span class="comment">//    unsigned int marker = markers.back();</span>
+<a name="l00083"></a>00083 <span class="comment">//    markers.pop_back();</span>
+<a name="l00084"></a>00084 <span class="comment">//    seek(marker);</span>
+<a name="l00085"></a>00085 <span class="comment">//}</span>
+<a name="l00086"></a>00086 <span class="comment">//</span>
+<a name="l00087"></a>00087 <span class="comment">//void BTParser::seek(unsigned int index)</span>
+<a name="l00088"></a>00088 <span class="comment">//{</span>
+<a name="l00089"></a>00089 <span class="comment">//    current = index;</span>
+<a name="l00090"></a>00090 <span class="comment">//}</span>
+<a name="l00091"></a>00091 <span class="comment">//</span>
+<a name="l00092"></a>00092 <span class="comment">//bool BTParser::isSpeculating(void)</span>
+<a name="l00093"></a>00093 <span class="comment">//{</span>
+<a name="l00094"></a>00094 <span class="comment">//    return (markers.size() &gt; 0);</span>
+<a name="l00095"></a>00095 <span class="comment">//}</span>
 <a name="l00096"></a>00096 
 </pre></div></div>
 </div>
   <div id="nav-path" class="navpath">
     <ul>
       <li class="navelem"><a class="el" href="btparser_8cpp.html">btparser.cpp</a>      </li>
-      <li class="footer">Generated on Fri Jun 22 2012 12:32:11 for Parse Utils by&#160;
+      <li class="footer">Generated on Fri Jun 22 2012 13:47:23 for Parse Utils by&#160;
 <a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.7.3 </li>
     </ul>

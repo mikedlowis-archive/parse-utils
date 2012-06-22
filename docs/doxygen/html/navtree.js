@@ -7,6 +7,7 @@ var NAVTREE =
       [ "BTParser", "class_b_t_parser.html", null ],
       [ "Exception", "class_exception.html", null ],
       [ "ILexer", "class_i_lexer.html", null ],
+      [ "IMarker", "class_i_marker.html", null ],
       [ "IParser", "class_i_parser.html", null ],
       [ "IVisitor", "class_i_visitor.html", null ],
       [ "LLKParser", "class_l_l_k_parser.html", null ],
@@ -21,6 +22,9 @@ var NAVTREE =
       [ "Exception", "class_exception.html", null ],
       [ "ILexer", "class_i_lexer.html", [
         [ "LLNLexer", "class_l_l_n_lexer.html", null ]
+      ] ],
+      [ "IMarker", "class_i_marker.html", [
+        [ "BTParser", "class_b_t_parser.html", null ]
       ] ],
       [ "IParser", "class_i_parser.html", [
         [ "BTParser", "class_b_t_parser.html", null ],
@@ -47,6 +51,9 @@ var NAVTREE =
       [ "source/lexer/token/token.cpp", "token_8cpp.html", null ],
       [ "source/lexer/token/token.d", "token_8d.html", null ],
       [ "source/lexer/token/token.h", "token_8h.html", null ],
+      [ "source/marker/imarker.cpp", "imarker_8cpp.html", null ],
+      [ "source/marker/imarker.d", "imarker_8d.html", null ],
+      [ "source/marker/imarker.h", "imarker_8h.html", null ],
       [ "source/parser/iparser.cpp", "iparser_8cpp.html", null ],
       [ "source/parser/iparser.d", "iparser_8d.html", null ],
       [ "source/parser/iparser.h", "iparser_8h.html", null ],
