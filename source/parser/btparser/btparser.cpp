@@ -3,7 +3,7 @@
 
 using namespace std;
 
-BTParser::BTParser() : current(0)
+BTParser::BTParser()
 {
 }
 
@@ -13,10 +13,10 @@ BTParser::~BTParser()
 
 void BTParser::consume(void)
 {
-    current++;
-    if((current == lookahead.size()) && !isSpeculating())
+    advance();
+    if((location() == lookahead.size()) && !isMarked())
     {
-        current = 0;
+        seek(0);
         lookahead.clear();
     }
     sync(1);
@@ -24,7 +24,7 @@ void BTParser::consume(void)
 
 void BTParser::sync(unsigned int i)
 {
-    unsigned int next_index = current + i - 1;
+    unsigned int next_index = location() + i - 1;
     unsigned int max_index = (lookahead.size() - 1);
 
     if( lookahead.size() == 0 )
@@ -63,34 +63,11 @@ void BTParser::match(TokenType_T type)
 Token& BTParser::lookaheadToken(unsigned int i)
 {
     sync(i);
-    return lookahead.at( current + i - 1 );
+    return lookahead.at( location() + i - 1 );
 }
 
 TokenType_T BTParser::lookaheadType(unsigned int i)
 {
     return lookaheadToken(i).type();
-}
-
-unsigned int BTParser::mark(void)
-{
-    markers.push_back(current);
-    return current;
-}
-
-void BTParser::release(void)
-{
-    unsigned int marker = markers.back();
-    markers.pop_back();
-    seek(marker);
-}
-
-void BTParser::seek(unsigned int index)
-{
-    current = index;
-}
-
-bool BTParser::isSpeculating(void)
-{
-    return (markers.size() > 0);
 }
 

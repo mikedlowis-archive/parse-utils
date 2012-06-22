@@ -3,17 +3,16 @@
 
 #include <exception>
 #include <vector>
+#include "imarker.h"
 #include "iparser.h"
 
-class BTParser : public IParser
+class BTParser : public IMarker, public IParser
 {
     protected:
-        unsigned int current;
-        std::vector<unsigned int> markers;
         std::vector<Token> lookahead;
     public:
         BTParser();
-        ~BTParser();
+        virtual ~BTParser();
 
         void consume(void);
         void sync(unsigned int i);
@@ -21,10 +20,6 @@ class BTParser : public IParser
         void match(TokenType_T type);
         Token& lookaheadToken(unsigned int i);
         TokenType_T lookaheadType(unsigned int i);
-        unsigned int mark(void);
-        void release(void);
-        void seek(unsigned int index);
-        bool isSpeculating(void);
 };
 
 #endif
