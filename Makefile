@@ -39,7 +39,7 @@ SRC_ROOT   = source/
 TESTS_ROOT = tests/
 
 # File Extensions
-SRC_EXT    = c
+SRC_EXT    = cpp
 TEST_EXT   = cpp
 
 # Libraries to Link Against
