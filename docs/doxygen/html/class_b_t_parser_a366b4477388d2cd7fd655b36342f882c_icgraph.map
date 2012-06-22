@@ -1,0 +1,7 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_b_t_parser.html#a762e16322aec6e50af51c2b6377d86fe" title="BTParser::sync" alt="" coords="149,32,261,61"/>
+<area shape="rect" id="node5" href="$class_b_t_parser.html#a9d72bba86b16427b0b03e91113b0f027" title="BTParser::consume" alt="" coords="553,5,689,35"/>
+<area shape="rect" id="node9" href="$class_b_t_parser.html#a2674f280bd3000751a100b45ac3899e2" title="BTParser::lookaheadToken" alt="" coords="309,57,488,87"/>
+<area shape="rect" id="node7" href="$class_b_t_parser.html#ad8fb9348dd9bc2e65a08033dd2539a03" title="BTParser::match" alt="" coords="755,57,875,87"/>
+<area shape="rect" id="node11" href="$class_b_t_parser.html#a01abded048ed1573e03867f7f2316583" title="BTParser::lookaheadType" alt="" coords="536,109,707,139"/>
+</map>

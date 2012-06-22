@@ -1,0 +1,437 @@
+\hypertarget{class_b_t_parser}{
+\section{BTParser Class Reference}
+\label{class_b_t_parser}\index{BTParser@{BTParser}}
+}
+
+
+{\ttfamily \#include $<$btparser.h$>$}
+
+
+
+Inheritance diagram for BTParser:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=136pt]{class_b_t_parser__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for BTParser:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=174pt]{class_b_t_parser__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_b_t_parser_ad9495eabeaf69d91c5f26131cabd3ec4}{BTParser} ()
+\item 
+\hyperlink{class_b_t_parser_a5965c4cf0baf950be976a0a2932eec2c}{$\sim$BTParser} ()
+\item 
+void \hyperlink{class_b_t_parser_a9d72bba86b16427b0b03e91113b0f027}{consume} (void)
+\item 
+void \hyperlink{class_b_t_parser_a762e16322aec6e50af51c2b6377d86fe}{sync} (unsigned int i)
+\item 
+void \hyperlink{class_b_t_parser_a366b4477388d2cd7fd655b36342f882c}{fill} (unsigned int n)
+\item 
+void \hyperlink{class_b_t_parser_ad8fb9348dd9bc2e65a08033dd2539a03}{match} (\hyperlink{token_8h_abf05bcc4c1b09928131e6afd3b768a77}{TokenType\_\-T} type)
+\item 
+\hyperlink{class_token}{Token} \& \hyperlink{class_b_t_parser_a2674f280bd3000751a100b45ac3899e2}{lookaheadToken} (unsigned int i)
+\item 
+\hyperlink{token_8h_abf05bcc4c1b09928131e6afd3b768a77}{TokenType\_\-T} \hyperlink{class_b_t_parser_a01abded048ed1573e03867f7f2316583}{lookaheadType} (unsigned int i)
+\item 
+unsigned int \hyperlink{class_b_t_parser_a9decf824eda1b2c893e170a0e8f736f0}{mark} (void)
+\item 
+void \hyperlink{class_b_t_parser_a0f7650612e327774ea163488f01efd5c}{release} (void)
+\item 
+void \hyperlink{class_b_t_parser_af6d31bfc4d025666ea1916ecf48602e2}{seek} (unsigned int index)
+\item 
+bool \hyperlink{class_b_t_parser_aa000adcfcb26aea600078ad2295eab8f}{isSpeculating} (void)
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+unsigned int \hyperlink{class_b_t_parser_a29930e6537cb65bbefe1962763372165}{current}
+\item 
+std::vector$<$ unsigned int $>$ \hyperlink{class_b_t_parser_aae8dc94330bb217be99ab2a8f6af005d}{markers}
+\item 
+std::vector$<$ \hyperlink{class_token}{Token} $>$ \hyperlink{class_b_t_parser_a796693745ebe354914eeacddba20f109}{lookahead}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 8 of file btparser.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_b_t_parser_ad9495eabeaf69d91c5f26131cabd3ec4}{
+\index{BTParser@{BTParser}!BTParser@{BTParser}}
+\index{BTParser@{BTParser}!BTParser@{BTParser}}
+\subsubsection[{BTParser}]{\setlength{\rightskip}{0pt plus 5cm}BTParser::BTParser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_ad9495eabeaf69d91c5f26131cabd3ec4}
+
+
+Definition at line 6 of file btparser.cpp.
+
+\hypertarget{class_b_t_parser_a5965c4cf0baf950be976a0a2932eec2c}{
+\index{BTParser@{BTParser}!$\sim$BTParser@{$\sim$BTParser}}
+\index{$\sim$BTParser@{$\sim$BTParser}!BTParser@{BTParser}}
+\subsubsection[{$\sim$BTParser}]{\setlength{\rightskip}{0pt plus 5cm}BTParser::$\sim$BTParser (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_a5965c4cf0baf950be976a0a2932eec2c}
+
+
+Definition at line 10 of file btparser.cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_b_t_parser_a9d72bba86b16427b0b03e91113b0f027}{
+\index{BTParser@{BTParser}!consume@{consume}}
+\index{consume@{consume}!BTParser@{BTParser}}
+\subsubsection[{consume}]{\setlength{\rightskip}{0pt plus 5cm}void BTParser::consume (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_a9d72bba86b16427b0b03e91113b0f027}
+
+
+Definition at line 14 of file btparser.cpp.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_t_parser_a9d72bba86b16427b0b03e91113b0f027_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=310pt]{class_b_t_parser_a9d72bba86b16427b0b03e91113b0f027_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_b_t_parser_a366b4477388d2cd7fd655b36342f882c}{
+\index{BTParser@{BTParser}!fill@{fill}}
+\index{fill@{fill}!BTParser@{BTParser}}
+\subsubsection[{fill}]{\setlength{\rightskip}{0pt plus 5cm}void BTParser::fill (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{n}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_a366b4477388d2cd7fd655b36342f882c}
+
+
+Definition at line 40 of file btparser.cpp.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=256pt]{class_b_t_parser_a366b4477388d2cd7fd655b36342f882c_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_t_parser_a366b4477388d2cd7fd655b36342f882c_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_b_t_parser_aa000adcfcb26aea600078ad2295eab8f}{
+\index{BTParser@{BTParser}!isSpeculating@{isSpeculating}}
+\index{isSpeculating@{isSpeculating}!BTParser@{BTParser}}
+\subsubsection[{isSpeculating}]{\setlength{\rightskip}{0pt plus 5cm}bool BTParser::isSpeculating (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_aa000adcfcb26aea600078ad2295eab8f}
+
+
+Definition at line 92 of file btparser.cpp.
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_t_parser_aa000adcfcb26aea600078ad2295eab8f_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_b_t_parser_a2674f280bd3000751a100b45ac3899e2}{
+\index{BTParser@{BTParser}!lookaheadToken@{lookaheadToken}}
+\index{lookaheadToken@{lookaheadToken}!BTParser@{BTParser}}
+\subsubsection[{lookaheadToken}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Token} \& BTParser::lookaheadToken (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_a2674f280bd3000751a100b45ac3899e2}
+
+
+Definition at line 63 of file btparser.cpp.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_t_parser_a2674f280bd3000751a100b45ac3899e2_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_t_parser_a2674f280bd3000751a100b45ac3899e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_b_t_parser_a01abded048ed1573e03867f7f2316583}{
+\index{BTParser@{BTParser}!lookaheadType@{lookaheadType}}
+\index{lookaheadType@{lookaheadType}!BTParser@{BTParser}}
+\subsubsection[{lookaheadType}]{\setlength{\rightskip}{0pt plus 5cm}{\bf TokenType\_\-T} BTParser::lookaheadType (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_a01abded048ed1573e03867f7f2316583}
+
+
+Definition at line 69 of file btparser.cpp.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_t_parser_a01abded048ed1573e03867f7f2316583_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{class_b_t_parser_a01abded048ed1573e03867f7f2316583_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_b_t_parser_a9decf824eda1b2c893e170a0e8f736f0}{
+\index{BTParser@{BTParser}!mark@{mark}}
+\index{mark@{mark}!BTParser@{BTParser}}
+\subsubsection[{mark}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int BTParser::mark (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_a9decf824eda1b2c893e170a0e8f736f0}
+
+
+Definition at line 74 of file btparser.cpp.
+
+\hypertarget{class_b_t_parser_ad8fb9348dd9bc2e65a08033dd2539a03}{
+\index{BTParser@{BTParser}!match@{match}}
+\index{match@{match}!BTParser@{BTParser}}
+\subsubsection[{match}]{\setlength{\rightskip}{0pt plus 5cm}void BTParser::match (
+\begin{DoxyParamCaption}
+\item[{{\bf TokenType\_\-T}}]{type}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_ad8fb9348dd9bc2e65a08033dd2539a03}
+
+
+Definition at line 49 of file btparser.cpp.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_t_parser_ad8fb9348dd9bc2e65a08033dd2539a03_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_b_t_parser_a0f7650612e327774ea163488f01efd5c}{
+\index{BTParser@{BTParser}!release@{release}}
+\index{release@{release}!BTParser@{BTParser}}
+\subsubsection[{release}]{\setlength{\rightskip}{0pt plus 5cm}void BTParser::release (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_a0f7650612e327774ea163488f01efd5c}
+
+
+Definition at line 80 of file btparser.cpp.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_b_t_parser_a0f7650612e327774ea163488f01efd5c_cgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_b_t_parser_af6d31bfc4d025666ea1916ecf48602e2}{
+\index{BTParser@{BTParser}!seek@{seek}}
+\index{seek@{seek}!BTParser@{BTParser}}
+\subsubsection[{seek}]{\setlength{\rightskip}{0pt plus 5cm}void BTParser::seek (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{index}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_af6d31bfc4d025666ea1916ecf48602e2}
+
+
+Definition at line 87 of file btparser.cpp.
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=296pt]{class_b_t_parser_af6d31bfc4d025666ea1916ecf48602e2_icgraph}
+\end{center}
+\end{figure}
+
+
+\hypertarget{class_b_t_parser_a762e16322aec6e50af51c2b6377d86fe}{
+\index{BTParser@{BTParser}!sync@{sync}}
+\index{sync@{sync}!BTParser@{BTParser}}
+\subsubsection[{sync}]{\setlength{\rightskip}{0pt plus 5cm}void BTParser::sync (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{i}
+\end{DoxyParamCaption}
+)}}
+\label{class_b_t_parser_a762e16322aec6e50af51c2b6377d86fe}
+
+
+Definition at line 25 of file btparser.cpp.
+
+
+
+Here is the call graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=376pt]{class_b_t_parser_a762e16322aec6e50af51c2b6377d86fe_cgraph}
+\end{center}
+\end{figure}
+
+
+
+
+Here is the caller graph for this function:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=400pt]{class_b_t_parser_a762e16322aec6e50af51c2b6377d86fe_icgraph}
+\end{center}
+\end{figure}
+
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_b_t_parser_a29930e6537cb65bbefe1962763372165}{
+\index{BTParser@{BTParser}!current@{current}}
+\index{current@{current}!BTParser@{BTParser}}
+\subsubsection[{current}]{\setlength{\rightskip}{0pt plus 5cm}unsigned int {\bf BTParser::current}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_b_t_parser_a29930e6537cb65bbefe1962763372165}
+
+
+Definition at line 11 of file btparser.h.
+
+\hypertarget{class_b_t_parser_a796693745ebe354914eeacddba20f109}{
+\index{BTParser@{BTParser}!lookahead@{lookahead}}
+\index{lookahead@{lookahead}!BTParser@{BTParser}}
+\subsubsection[{lookahead}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<${\bf Token}$>$ {\bf BTParser::lookahead}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_b_t_parser_a796693745ebe354914eeacddba20f109}
+
+
+Definition at line 13 of file btparser.h.
+
+\hypertarget{class_b_t_parser_aae8dc94330bb217be99ab2a8f6af005d}{
+\index{BTParser@{BTParser}!markers@{markers}}
+\index{markers@{markers}!BTParser@{BTParser}}
+\subsubsection[{markers}]{\setlength{\rightskip}{0pt plus 5cm}std::vector$<$unsigned int$>$ {\bf BTParser::markers}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_b_t_parser_aae8dc94330bb217be99ab2a8f6af005d}
+
+
+Definition at line 12 of file btparser.h.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+source/parser/btparser/\hyperlink{btparser_8h}{btparser.h}\item 
+source/parser/btparser/\hyperlink{btparser_8cpp}{btparser.cpp}\end{DoxyCompactItemize}

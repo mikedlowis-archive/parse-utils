@@ -1,0 +1,183 @@
+\hypertarget{class_scope_stack}{
+\section{ScopeStack Class Reference}
+\label{class_scope_stack}\index{ScopeStack@{ScopeStack}}
+}
+
+
+{\ttfamily \#include $<$scopestack.h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_scope_stack_a754459e71e5e91fd4210c063014634c2}{ScopeStack} ()
+\item 
+virtual \hyperlink{class_scope_stack_a64e2f6ee2758341a649bbbc873b4c626}{$\sim$ScopeStack} ()
+\item 
+void \hyperlink{class_scope_stack_ae5809bddef2aa253460c1d35ed36c1c8}{startScope} ()
+\item 
+void \hyperlink{class_scope_stack_a410129444ad5a4be8784007d1fd73129}{stopScope} ()
+\item 
+void \hyperlink{class_scope_stack_a16f903a19a7223c925d00fe6ba4155f2}{define} (const std::string \&name)
+\item 
+void \hyperlink{class_scope_stack_ae0c9aa708ebe375e6d4c4eebc4ffc60a}{define} (const std::string \&name, \hyperlink{symbol_8h_a07090a2a79cb68ad8d84e7ecd6558859}{symtype\_\-t} type)
+\item 
+const \hyperlink{class_symbol}{Symbol} $\ast$ \hyperlink{class_scope_stack_a93cb7113443905f602ba812587e01b4d}{lookup} (const std::string \&name)
+\item 
+bool \hyperlink{class_scope_stack_a553478b9e13cba1cf77b7f0e7a91c6f4}{isLocal} (const std::string \&name) const 
+\item 
+bool \hyperlink{class_scope_stack_ae0792790e8cfd148e0cfb67090a790bf}{isGlobal} (const std::string \&name) const 
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std::list$<$ \hyperlink{scopestack_8h_ac00f2f845911b84646322b4b1c7bc14c}{sym\_\-table\_\-t} $>$ \hyperlink{class_scope_stack_affa1115b1547064c04186846fd594344}{scope\_\-stack}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+Definition at line 12 of file scopestack.h.
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\hypertarget{class_scope_stack_a754459e71e5e91fd4210c063014634c2}{
+\index{ScopeStack@{ScopeStack}!ScopeStack@{ScopeStack}}
+\index{ScopeStack@{ScopeStack}!ScopeStack@{ScopeStack}}
+\subsubsection[{ScopeStack}]{\setlength{\rightskip}{0pt plus 5cm}ScopeStack::ScopeStack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_scope_stack_a754459e71e5e91fd4210c063014634c2}
+
+
+Definition at line 6 of file scopestack.cpp.
+
+\hypertarget{class_scope_stack_a64e2f6ee2758341a649bbbc873b4c626}{
+\index{ScopeStack@{ScopeStack}!$\sim$ScopeStack@{$\sim$ScopeStack}}
+\index{$\sim$ScopeStack@{$\sim$ScopeStack}!ScopeStack@{ScopeStack}}
+\subsubsection[{$\sim$ScopeStack}]{\setlength{\rightskip}{0pt plus 5cm}ScopeStack::$\sim$ScopeStack (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
+\label{class_scope_stack_a64e2f6ee2758341a649bbbc873b4c626}
+
+
+Definition at line 13 of file scopestack.cpp.
+
+
+
+\subsection{Member Function Documentation}
+\hypertarget{class_scope_stack_a16f903a19a7223c925d00fe6ba4155f2}{
+\index{ScopeStack@{ScopeStack}!define@{define}}
+\index{define@{define}!ScopeStack@{ScopeStack}}
+\subsubsection[{define}]{\setlength{\rightskip}{0pt plus 5cm}void ScopeStack::define (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{class_scope_stack_a16f903a19a7223c925d00fe6ba4155f2}
+
+
+Definition at line 28 of file scopestack.cpp.
+
+\hypertarget{class_scope_stack_ae0c9aa708ebe375e6d4c4eebc4ffc60a}{
+\index{ScopeStack@{ScopeStack}!define@{define}}
+\index{define@{define}!ScopeStack@{ScopeStack}}
+\subsubsection[{define}]{\setlength{\rightskip}{0pt plus 5cm}void ScopeStack::define (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{name, }
+\item[{{\bf symtype\_\-t}}]{type}
+\end{DoxyParamCaption}
+)}}
+\label{class_scope_stack_ae0c9aa708ebe375e6d4c4eebc4ffc60a}
+
+
+Definition at line 34 of file scopestack.cpp.
+
+\hypertarget{class_scope_stack_ae0792790e8cfd148e0cfb67090a790bf}{
+\index{ScopeStack@{ScopeStack}!isGlobal@{isGlobal}}
+\index{isGlobal@{isGlobal}!ScopeStack@{ScopeStack}}
+\subsubsection[{isGlobal}]{\setlength{\rightskip}{0pt plus 5cm}bool ScopeStack::isGlobal (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{name}
+\end{DoxyParamCaption}
+) const}}
+\label{class_scope_stack_ae0792790e8cfd148e0cfb67090a790bf}
+
+
+Definition at line 66 of file scopestack.cpp.
+
+\hypertarget{class_scope_stack_a553478b9e13cba1cf77b7f0e7a91c6f4}{
+\index{ScopeStack@{ScopeStack}!isLocal@{isLocal}}
+\index{isLocal@{isLocal}!ScopeStack@{ScopeStack}}
+\subsubsection[{isLocal}]{\setlength{\rightskip}{0pt plus 5cm}bool ScopeStack::isLocal (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{name}
+\end{DoxyParamCaption}
+) const}}
+\label{class_scope_stack_a553478b9e13cba1cf77b7f0e7a91c6f4}
+
+
+Definition at line 55 of file scopestack.cpp.
+
+\hypertarget{class_scope_stack_a93cb7113443905f602ba812587e01b4d}{
+\index{ScopeStack@{ScopeStack}!lookup@{lookup}}
+\index{lookup@{lookup}!ScopeStack@{ScopeStack}}
+\subsubsection[{lookup}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf Symbol} $\ast$ ScopeStack::lookup (
+\begin{DoxyParamCaption}
+\item[{const std::string \&}]{name}
+\end{DoxyParamCaption}
+)}}
+\label{class_scope_stack_a93cb7113443905f602ba812587e01b4d}
+
+
+Definition at line 40 of file scopestack.cpp.
+
+\hypertarget{class_scope_stack_ae5809bddef2aa253460c1d35ed36c1c8}{
+\index{ScopeStack@{ScopeStack}!startScope@{startScope}}
+\index{startScope@{startScope}!ScopeStack@{ScopeStack}}
+\subsubsection[{startScope}]{\setlength{\rightskip}{0pt plus 5cm}void ScopeStack::startScope (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_scope_stack_ae5809bddef2aa253460c1d35ed36c1c8}
+
+
+Definition at line 17 of file scopestack.cpp.
+
+\hypertarget{class_scope_stack_a410129444ad5a4be8784007d1fd73129}{
+\index{ScopeStack@{ScopeStack}!stopScope@{stopScope}}
+\index{stopScope@{stopScope}!ScopeStack@{ScopeStack}}
+\subsubsection[{stopScope}]{\setlength{\rightskip}{0pt plus 5cm}void ScopeStack::stopScope (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}
+\label{class_scope_stack_a410129444ad5a4be8784007d1fd73129}
+
+
+Definition at line 23 of file scopestack.cpp.
+
+
+
+\subsection{Member Data Documentation}
+\hypertarget{class_scope_stack_affa1115b1547064c04186846fd594344}{
+\index{ScopeStack@{ScopeStack}!scope\_\-stack@{scope\_\-stack}}
+\index{scope\_\-stack@{scope\_\-stack}!ScopeStack@{ScopeStack}}
+\subsubsection[{scope\_\-stack}]{\setlength{\rightskip}{0pt plus 5cm}std::list$<${\bf sym\_\-table\_\-t}$>$ {\bf ScopeStack::scope\_\-stack}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
+\label{class_scope_stack_affa1115b1547064c04186846fd594344}
+
+
+Definition at line 14 of file scopestack.h.
+
+
+
+The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+\item 
+source/symbol/\hyperlink{scopestack_8h}{scopestack.h}\item 
+source/symbol/\hyperlink{scopestack_8cpp}{scopestack.cpp}\end{DoxyCompactItemize}

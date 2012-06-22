@@ -1,0 +1,10 @@
+<map id="G" name="G">
+<area shape="rect" id="node3" href="$class_b_t_parser.html#a9d72bba86b16427b0b03e91113b0f027" title="BTParser::consume" alt="" coords="191,44,327,73"/>
+<area shape="rect" id="node13" href="$class_b_t_parser.html#a2674f280bd3000751a100b45ac3899e2" title="BTParser::lookaheadToken" alt="" coords="392,109,571,139"/>
+<area shape="rect" id="node16" href="$class_b_t_parser.html#a01abded048ed1573e03867f7f2316583" title="BTParser::lookaheadType" alt="" coords="173,148,344,177"/>
+<area shape="rect" id="node19" href="$class_token.html#af7a5db637926db45f92522f7bc207207" title="Token::type" alt="" coords="436,175,527,204"/>
+<area shape="rect" id="node5" href="$class_b_t_parser.html#aa000adcfcb26aea600078ad2295eab8f" title="BTParser::isSpeculating" alt="" coords="400,5,563,35"/>
+<area shape="rect" id="node7" href="$class_b_t_parser.html#a762e16322aec6e50af51c2b6377d86fe" title="BTParser::sync" alt="" coords="619,84,731,113"/>
+<area shape="rect" id="node9" href="$class_b_t_parser.html#a366b4477388d2cd7fd655b36342f882c" title="BTParser::fill" alt="" coords="779,84,875,113"/>
+<area shape="rect" id="node11" href="$class_i_lexer.html#a6f5098fda43f68b01d2e7a2a7158c50d" title="ILexer::next" alt="" coords="923,84,1013,113"/>
+</map>
