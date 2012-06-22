@@ -1,4 +1,9 @@
 build/*
-cscope.out
-project.vim
 tags
+cscope.out
+*.o
+*.exe
+*.a
+*.lib
+*~
+*.d

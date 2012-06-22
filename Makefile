@@ -28,45 +28,81 @@ endef
 # Project and Artifact Names
 #---------------------------
 PROJ_NAME   = parseutils
+TEST_RUNNER = test_runner
 SHARED_NAME = lib$(PROJ_NAME).lib
 STATIC_NAME = lib$(PROJ_NAME).a
 
 # File and Directory Settings
 #----------------------------
 # Root Directories
-SRC_ROOT  = source/
+SRC_ROOT   = source/
+TESTS_ROOT = tests/
+
 # File Extensions
-SRC_EXT = cpp
+SRC_EXT    = c
+TEST_EXT   = cpp
+
+# Libraries to Link Against
+LIBS      =
+TEST_LIBS = $(LIBS) \
+            tools/UnitTest++/libUnitTest++.a
+
 # Source File Lists
 SRC_FILES  = $(call flist, $(SRC_ROOT), $(SRC_EXT))
+TEST_FILES = $(call flist, $(TESTS_ROOT), $(TEST_EXT))
 
 # Object File Lists
-SRC_OBJS = $(SRC_FILES:%.$(SRC_EXT)=%.o)
+SRC_OBJS  = $(SRC_FILES:%.$(SRC_EXT)=%.o)
+TEST_OBJS = $(TEST_FILES:%.$(TEST_EXT)=%.o)
+
 # Dependecy File Lists
 SRC_DEPS  = $(SRC_OBJS:%.o=%.d)
-# Include Directories
-INC_DIRS = $(call incdirs, $(SRC_ROOT))
+TEST_DEPS = $(TEST_OBJS:%.o=%.d)
 
+# Include Directories
+INC_DIRS = $(call incdirs, $(SRC_ROOT)) \
+           $(call incdirs, tools/UnitTest++/src)
 
 # Compiler and Linker Options
 #----------------------------
-CXXFLAGS = $(INC_DIRS) -Wall -fPIC
-ARFLAGS  = rcs
+CXXFLAGS      = $(INC_DIRS) -Wall -fPIC
+TEST_CXXFLAGS = $(INC_DIRS)
+ARFLAGS       = rcs
 
 # Build Rules
 #------------
-all: shared static
+
+# List all rules not named for files/folders on disk
+.PHONY: all release shared static test docs
+
+all: release test
+release: shared static docs
 shared: $(SHARED_NAME)
 static: $(STATIC_NAME)
+
+test: $(TEST_RUNNER)
+	@echo Running unit tests...
+	@./$(TEST_RUNNER)
+
+docs:
+	@doxygen
 
 # Binaries
 $(SHARED_NAME): $(SRC_OBJS)
 	@echo Linking $@...
-	@$(CXX) $(CXXFLAGS) -shared -o $@ $(SRC_OBJS)
+	@$(CXX) $(CXXFLAGS) -shared -o $@ $(SRC_OBJS) $(LIBS)
 
 $(STATIC_NAME): $(SRC_OBJS)
 	@echo Linking $@...
-	@$(AR) $(ARFLAGS) -o $@ $(SRC_OBJS)
+	@$(AR) $(ARFLAGS) -o $@ $(SRC_OBJS) $(LIBS)
+
+$(TEST_RUNNER): unit_test_pp $(SRC_OBJS) $(TEST_OBJS)
+	@echo Linking $@...
+	@$(CXX) $(TEST_CXXFLAGS) -o $@ $(SRC_OBJS) $(TEST_OBJS) $(TEST_LIBS)
+
+# Libraries
+unit_test_pp:
+	@$(MAKE) -C tools/UnitTest++
 
 # Object Files
 $(SRC_OBJS): %.o : %.$(SRC_EXT)
@@ -74,10 +110,22 @@ $(SRC_OBJS): %.o : %.$(SRC_EXT)
 	@$(call make-depend,$<,$@)
 	@$(CXX) -c $(CXXFLAGS) -o $@ $<
 
+$(TEST_OBJS): %.o : %.$(TEST_EXT)
+	@echo $<
+	@$(call make-depend,$<,$@)
+	@$(CXX) -c $(TEST_CXXFLAGS) -o $@ $<
+
 # Cleanup
 clean:
+	@$(MAKE) -C tools/UnitTest++ clean
 	@$(RM) $(SRC_OBJS)
+	@$(RM) $(TEST_OBJS)
 	@$(RM) $(SRC_DEPS)
+	@$(RM) $(TEST_DEPS)
 	@$(RM) $(SHARED_NAME)
 	@$(RM) $(STATIC_NAME)
+	@$(RM) $(TEST_RUNNER)*
+
+-include $(SRC_DEPS)
+-include $(TEST_DEPS)
 
