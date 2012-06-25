@@ -1,5 +1,13 @@
 #include "imarker.h"
 
+IMarker::IMarker() : cur_location(0)
+{
+}
+
+IMarker::~IMarker()
+{
+}
+
 void IMarker::advance(void)
 {
     cur_location++;

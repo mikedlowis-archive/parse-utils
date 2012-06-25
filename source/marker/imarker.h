@@ -9,6 +9,8 @@ class IMarker
         unsigned int cur_location;
         std::vector<unsigned int> markers;
     public:
+        IMarker();
+        virtual ~IMarker();
         void advance(void);
         unsigned int location(void);
         void location(unsigned int index);
