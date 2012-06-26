@@ -113,10 +113,10 @@ namespace {
     //-------------------------------------------------------------------------
     // Test sync() method
     //-------------------------------------------------------------------------
-    TEST(Verify_sync_loads_input_to_desired_index_and_sets_the_current_index)
+    TEST(Verify_sync_loads_1_item_of_input_and_updates_the_index)
     {
         TestIBuffer buffer;
-
+        buffer.cur_size = 0;
         CHECK( 0 == buffer.times_size_called );
         CHECK( 0 == buffer.times_clear_called );
         CHECK( 0 == buffer.location() );
@@ -127,20 +127,38 @@ namespace {
         CHECK( 0 == buffer.location() );
         CHECK( 2 == buffer.times_size_called );
         CHECK( 1 == buffer.times_load_called );
+    }
+
+    TEST(Verify_sync_loads_1_item_of_input_and_updates_the_index_so_that_the_buffer_contains_two_items)
+    {
+        TestIBuffer buffer;
+        buffer.cur_size = 1;
+        CHECK( 0 == buffer.times_size_called );
+        CHECK( 0 == buffer.times_clear_called );
+        CHECK( 0 == buffer.location() );
 
         // Sync from 1 to 2
         buffer.sync(2);
         CHECK( 2 == buffer.cur_size );
         CHECK( 0 == buffer.location() );
-        CHECK( 4 == buffer.times_size_called );
-        CHECK( 2 == buffer.times_load_called );
+        CHECK( 2 == buffer.times_size_called );
+        CHECK( 1 == buffer.times_load_called );
+    }
+
+    TEST(Verify_sync_should_detect_that_data_is_already_loaded_and_do_nothing)
+    {
+        TestIBuffer buffer;
+        buffer.cur_size = 2;
+        CHECK( 0 == buffer.times_size_called );
+        CHECK( 0 == buffer.times_clear_called );
+        CHECK( 0 == buffer.location() );
 
         // Do nothing if already synced
         buffer.sync(1);
         CHECK( 2 == buffer.cur_size );
         CHECK( 0 == buffer.location() );
-        CHECK( 6 == buffer.times_size_called );
-        CHECK( 2 == buffer.times_load_called );
+        CHECK( 2 == buffer.times_size_called );
+        CHECK( 0 == buffer.times_load_called );
     }
 
     //-------------------------------------------------------------------------
