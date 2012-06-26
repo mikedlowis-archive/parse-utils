@@ -116,13 +116,63 @@ namespace {
     TEST(Verify_sync_loads_input_to_desired_index_and_sets_the_current_index)
     {
         TestIBuffer buffer;
+
+        CHECK( 0 == buffer.times_size_called );
+        CHECK( 0 == buffer.times_clear_called );
+        CHECK( 0 == buffer.location() );
+
+        // Sync from 0 to 1
+        buffer.sync(1);
+        CHECK( 1 == buffer.cur_size );
+        CHECK( 0 == buffer.location() );
+        CHECK( 2 == buffer.times_size_called );
+        CHECK( 1 == buffer.times_load_called );
+
+        // Sync from 1 to 2
+        buffer.sync(2);
+        CHECK( 2 == buffer.cur_size );
+        CHECK( 0 == buffer.location() );
+        CHECK( 4 == buffer.times_size_called );
+        CHECK( 2 == buffer.times_load_called );
+
+        // Do nothing if already synced
+        buffer.sync(1);
+        CHECK( 2 == buffer.cur_size );
+        CHECK( 0 == buffer.location() );
+        CHECK( 6 == buffer.times_size_called );
+        CHECK( 2 == buffer.times_load_called );
     }
 
     //-------------------------------------------------------------------------
     // Test fill() method
     //-------------------------------------------------------------------------
-    TEST(Verify_fill_loads_buffer_to_desired_index)
+    TEST(Verify_fill_loads_0_items_from_input)
     {
         TestIBuffer buffer;
+        CHECK( 0 == buffer.times_load_called );
+        CHECK( 0 == buffer.cur_size );
+        buffer.fill(0);
+        CHECK( 0 == buffer.cur_size );
+        CHECK( 0 == buffer.times_load_called );
+    }
+
+    TEST(Verify_fill_loads_1_item_from_input)
+    {
+        TestIBuffer buffer;
+        CHECK( 0 == buffer.times_load_called );
+        CHECK( 0 == buffer.cur_size );
+        buffer.fill(1);
+        CHECK( 1 == buffer.cur_size );
+        CHECK( 1 == buffer.times_load_called );
+    }
+
+    TEST(Verify_fill_loads_2_items_from_input)
+    {
+        TestIBuffer buffer;
+        CHECK( 0 == buffer.times_load_called );
+        CHECK( 0 == buffer.cur_size );
+        buffer.fill(2);
+        CHECK( 2 == buffer.cur_size );
+        CHECK( 2 == buffer.times_load_called );
     }
 }
