@@ -1,3 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$imarker_8cpp.html" title="source/marker/imarker.cpp" alt="" coords="5,83,181,112"/>
+<area shape="rect" id="node3" href="$ibuffer_8h.html" title="source/buffer/ibuffer.h" alt="" coords="13,88,155,115"/>
+<area shape="rect" id="node7" href="$imarker_8cpp.html" title="source/marker/imarker.cpp" alt="" coords="179,88,353,115"/>
+<area shape="rect" id="node9" href="$btparser_8h.html" title="source/parser/btparser\l/btparser.h" alt="" coords="379,81,527,122"/>
+<area shape="rect" id="node5" href="$ibuffer_8cpp.html" title="source/buffer/ibuffer.cpp" alt="" coords="5,179,163,205"/>
+<area shape="rect" id="node11" href="$btparser_8cpp.html" title="source/parser/btparser\l/btparser.cpp" alt="" coords="379,171,527,213"/>
 </map>

@@ -1,3 +1,7 @@
 <map id="G" name="G">
-<area shape="rect" id="node5" href="$iparser_8h.html" title="iparser.h" alt="" coords="165,83,237,112"/>
+<area shape="rect" id="node5" href="$iparser_8h.html" title="iparser.h" alt="" coords="349,80,419,107"/>
+<area shape="rect" id="node11" href="$ast_8h.html" title="ast.h" alt="" coords="137,229,185,256"/>
+<area shape="rect" id="node21" href="$ilexer_8h.html" title="ilexer.h" alt="" coords="353,155,415,181"/>
+<area shape="rect" id="node29" href="$ivisitor_8h.html" title="ivisitor.h" alt="" coords="249,155,316,181"/>
+<area shape="rect" id="node18" href="$token_8h.html" title="token.h" alt="" coords="261,304,325,331"/>
 </map>

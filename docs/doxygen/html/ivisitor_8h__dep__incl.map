@@ -1,3 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$ivisitor_8cpp.html" title="source/visitor/ivisitor.cpp" alt="" coords="5,83,168,112"/>
+<area shape="rect" id="node3" href="$ast_8cpp.html" title="source/parser/ast/ast.cpp" alt="" coords="5,88,169,115"/>
+<area shape="rect" id="node5" href="$iparser_8h.html" title="source/parser/iparser.h" alt="" coords="195,88,345,115"/>
+<area shape="rect" id="node13" href="$astprinter_8h.html" title="source/visitor/astprinter\l/astprinter.h" alt="" coords="371,81,524,122"/>
+<area shape="rect" id="node17" href="$ivisitor_8cpp.html" title="source/visitor/ivisitor.cpp" alt="" coords="550,88,711,115"/>
+<area shape="rect" id="node7" href="$btparser_8h.html" title="source/parser/btparser\l/btparser.h" alt="" coords="15,171,163,213"/>
+<area shape="rect" id="node11" href="$iparser_8cpp.html" title="source/parser/iparser.cpp" alt="" coords="188,179,352,205"/>
+<area shape="rect" id="node9" href="$btparser_8cpp.html" title="source/parser/btparser\l/btparser.cpp" alt="" coords="15,262,163,303"/>
+<area shape="rect" id="node15" href="$astprinter_8cpp.html" title="source/visitor/astprinter\l/astprinter.cpp" alt="" coords="377,171,531,213"/>
 </map>

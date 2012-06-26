@@ -1,14 +1,14 @@
-\hypertarget{class_i_parser}{
-\section{IParser Class Reference}
-\label{class_i_parser}\index{IParser@{IParser}}
+\hypertarget{class_i_parser}{\section{I\-Parser Class Reference}
+\label{class_i_parser}\index{I\-Parser@{I\-Parser}}
 }
 
 
-{\ttfamily \#include $<$iparser.h$>$}
+{\ttfamily \#include $<$iparser.\-h$>$}
 
 
 
-Inheritance diagram for IParser:\nopagebreak
+Inheritance diagram for I\-Parser\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -17,144 +17,132 @@ Inheritance diagram for IParser:\nopagebreak
 \end{figure}
 
 
-Collaboration diagram for IParser:\nopagebreak
+Collaboration diagram for I\-Parser\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=174pt]{class_i_parser__coll__graph}
+\includegraphics[width=177pt]{class_i_parser__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_i_parser_a97691dca898e799fac489ede2ff058b4}{IParser} ()
+\hyperlink{class_i_parser_a97691dca898e799fac489ede2ff058b4}{I\-Parser} ()
 \item 
-\hyperlink{class_i_parser_a7e843f2ae69a52cbacf5bd7b5b9622cf}{IParser} (\hyperlink{class_i_lexer}{ILexer} $\ast$in)
+\hyperlink{class_i_parser_a7e843f2ae69a52cbacf5bd7b5b9622cf}{I\-Parser} (\hyperlink{class_i_lexer}{I\-Lexer} $\ast$in)
 \item 
-virtual \hyperlink{class_i_parser_a5b617df0a65b13e5f4be40d764a8ba3b}{$\sim$IParser} ()
+virtual \hyperlink{class_i_parser_a5b617df0a65b13e5f4be40d764a8ba3b}{$\sim$\-I\-Parser} ()
 \item 
 virtual void \hyperlink{class_i_parser_a03bdae30f9a5acb2b9ec5aebb20cc0c2}{parse} ()=0
 \item 
-virtual void \hyperlink{class_i_parser_a0bb117afecf63b3f2d95b598b763fec2}{input} (\hyperlink{class_i_lexer}{ILexer} $\ast$in)
+virtual void \hyperlink{class_i_parser_a0bb117afecf63b3f2d95b598b763fec2}{input} (\hyperlink{class_i_lexer}{I\-Lexer} $\ast$in)
 \item 
-virtual const \hyperlink{class_a_s_t}{AST} $\ast$ \hyperlink{class_i_parser_a486e53606cbc75b8a44cfea335ac9c87}{ast} () const 
+virtual const \hyperlink{class_a_s_t}{A\-S\-T} $\ast$ \hyperlink{class_i_parser_a486e53606cbc75b8a44cfea335ac9c87}{ast} () const 
 \item 
-virtual void \hyperlink{class_i_parser_ab6b8bb5a97c0bce976135dc4eccc1452}{process} (\hyperlink{class_i_visitor}{IVisitor} \&visitor)
+virtual void \hyperlink{class_i_parser_ab6b8bb5a97c0bce976135dc4eccc1452}{process} (\hyperlink{class_i_visitor}{I\-Visitor} \&visitor)
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_a_s_t}{AST} $\ast$ \hyperlink{class_i_parser_a525c62c560492ef3bdb1a21c4da13e04}{result}
+\hyperlink{class_a_s_t}{A\-S\-T} $\ast$ \hyperlink{class_i_parser_a525c62c560492ef3bdb1a21c4da13e04}{result}
 \item 
-\hyperlink{class_i_lexer}{ILexer} $\ast$ \hyperlink{class_i_parser_a2c89fe9ae1c200eda69c78f7441dea00}{lexer}
+\hyperlink{class_i_lexer}{I\-Lexer} $\ast$ \hyperlink{class_i_parser_a2c89fe9ae1c200eda69c78f7441dea00}{lexer}
 \end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
 
 
-Definition at line 26 of file iparser.h.
+Definition at line 26 of file iparser.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_i_parser_a97691dca898e799fac489ede2ff058b4}{
-\index{IParser@{IParser}!IParser@{IParser}}
-\index{IParser@{IParser}!IParser@{IParser}}
-\subsubsection[{IParser}]{\setlength{\rightskip}{0pt plus 5cm}IParser::IParser (
+\hypertarget{class_i_parser_a97691dca898e799fac489ede2ff058b4}{\index{I\-Parser@{I\-Parser}!I\-Parser@{I\-Parser}}
+\index{I\-Parser@{I\-Parser}!IParser@{I\-Parser}}
+\subsubsection[{I\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}I\-Parser\-::\-I\-Parser (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)}}
-\label{class_i_parser_a97691dca898e799fac489ede2ff058b4}
+)}}\label{class_i_parser_a97691dca898e799fac489ede2ff058b4}
 
 
-Definition at line 28 of file iparser.cpp.
+Definition at line 28 of file iparser.\-cpp.
 
-\hypertarget{class_i_parser_a7e843f2ae69a52cbacf5bd7b5b9622cf}{
-\index{IParser@{IParser}!IParser@{IParser}}
-\index{IParser@{IParser}!IParser@{IParser}}
-\subsubsection[{IParser}]{\setlength{\rightskip}{0pt plus 5cm}IParser::IParser (
+\hypertarget{class_i_parser_a7e843f2ae69a52cbacf5bd7b5b9622cf}{\index{I\-Parser@{I\-Parser}!I\-Parser@{I\-Parser}}
+\index{I\-Parser@{I\-Parser}!IParser@{I\-Parser}}
+\subsubsection[{I\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}I\-Parser\-::\-I\-Parser (
 \begin{DoxyParamCaption}
-\item[{{\bf ILexer} $\ast$}]{in}
+\item[{{\bf I\-Lexer} $\ast$}]{in}
 \end{DoxyParamCaption}
-)}}
-\label{class_i_parser_a7e843f2ae69a52cbacf5bd7b5b9622cf}
+)}}\label{class_i_parser_a7e843f2ae69a52cbacf5bd7b5b9622cf}
 
 
-Definition at line 32 of file iparser.cpp.
+Definition at line 32 of file iparser.\-cpp.
 
-\hypertarget{class_i_parser_a5b617df0a65b13e5f4be40d764a8ba3b}{
-\index{IParser@{IParser}!$\sim$IParser@{$\sim$IParser}}
-\index{$\sim$IParser@{$\sim$IParser}!IParser@{IParser}}
-\subsubsection[{$\sim$IParser}]{\setlength{\rightskip}{0pt plus 5cm}IParser::$\sim$IParser (
+\hypertarget{class_i_parser_a5b617df0a65b13e5f4be40d764a8ba3b}{\index{I\-Parser@{I\-Parser}!$\sim$\-I\-Parser@{$\sim$\-I\-Parser}}
+\index{$\sim$\-I\-Parser@{$\sim$\-I\-Parser}!IParser@{I\-Parser}}
+\subsubsection[{$\sim$\-I\-Parser}]{\setlength{\rightskip}{0pt plus 5cm}I\-Parser\-::$\sim$\-I\-Parser (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_i_parser_a5b617df0a65b13e5f4be40d764a8ba3b}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_i_parser_a5b617df0a65b13e5f4be40d764a8ba3b}
 
 
-Definition at line 36 of file iparser.cpp.
+Definition at line 36 of file iparser.\-cpp.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_i_parser_a486e53606cbc75b8a44cfea335ac9c87}{
-\index{IParser@{IParser}!ast@{ast}}
-\index{ast@{ast}!IParser@{IParser}}
-\subsubsection[{ast}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf AST} $\ast$ IParser::ast (
+\hypertarget{class_i_parser_a486e53606cbc75b8a44cfea335ac9c87}{\index{I\-Parser@{I\-Parser}!ast@{ast}}
+\index{ast@{ast}!IParser@{I\-Parser}}
+\subsubsection[{ast}]{\setlength{\rightskip}{0pt plus 5cm}const {\bf A\-S\-T} $\ast$ I\-Parser\-::ast (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_i_parser_a486e53606cbc75b8a44cfea335ac9c87}
+) const\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_i_parser_a486e53606cbc75b8a44cfea335ac9c87}
 
 
-Definition at line 54 of file iparser.cpp.
+Definition at line 54 of file iparser.\-cpp.
 
-\hypertarget{class_i_parser_a0bb117afecf63b3f2d95b598b763fec2}{
-\index{IParser@{IParser}!input@{input}}
-\index{input@{input}!IParser@{IParser}}
-\subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}void IParser::input (
+\hypertarget{class_i_parser_a0bb117afecf63b3f2d95b598b763fec2}{\index{I\-Parser@{I\-Parser}!input@{input}}
+\index{input@{input}!IParser@{I\-Parser}}
+\subsubsection[{input}]{\setlength{\rightskip}{0pt plus 5cm}void I\-Parser\-::input (
 \begin{DoxyParamCaption}
-\item[{{\bf ILexer} $\ast$}]{in}
+\item[{{\bf I\-Lexer} $\ast$}]{in}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_i_parser_a0bb117afecf63b3f2d95b598b763fec2}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_i_parser_a0bb117afecf63b3f2d95b598b763fec2}
 
 
-Definition at line 49 of file iparser.cpp.
+Definition at line 49 of file iparser.\-cpp.
 
-\hypertarget{class_i_parser_a03bdae30f9a5acb2b9ec5aebb20cc0c2}{
-\index{IParser@{IParser}!parse@{parse}}
-\index{parse@{parse}!IParser@{IParser}}
-\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}virtual void IParser::parse (
+\hypertarget{class_i_parser_a03bdae30f9a5acb2b9ec5aebb20cc0c2}{\index{I\-Parser@{I\-Parser}!parse@{parse}}
+\index{parse@{parse}!IParser@{I\-Parser}}
+\subsubsection[{parse}]{\setlength{\rightskip}{0pt plus 5cm}virtual void I\-Parser\-::parse (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}pure virtual\mbox{]}}}}
-\label{class_i_parser_a03bdae30f9a5acb2b9ec5aebb20cc0c2}
-\hypertarget{class_i_parser_ab6b8bb5a97c0bce976135dc4eccc1452}{
-\index{IParser@{IParser}!process@{process}}
-\index{process@{process}!IParser@{IParser}}
-\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void IParser::process (
+)\hspace{0.3cm}{\ttfamily [pure virtual]}}}\label{class_i_parser_a03bdae30f9a5acb2b9ec5aebb20cc0c2}
+\hypertarget{class_i_parser_ab6b8bb5a97c0bce976135dc4eccc1452}{\index{I\-Parser@{I\-Parser}!process@{process}}
+\index{process@{process}!IParser@{I\-Parser}}
+\subsubsection[{process}]{\setlength{\rightskip}{0pt plus 5cm}void I\-Parser\-::process (
 \begin{DoxyParamCaption}
-\item[{{\bf IVisitor} \&}]{visitor}
+\item[{{\bf I\-Visitor} \&}]{visitor}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_i_parser_ab6b8bb5a97c0bce976135dc4eccc1452}
+)\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_i_parser_ab6b8bb5a97c0bce976135dc4eccc1452}
 
 
-Definition at line 59 of file iparser.cpp.
+Definition at line 59 of file iparser.\-cpp.
 
 
 
-Here is the call graph for this function:\nopagebreak
+Here is the call graph for this function\-:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=386pt]{class_i_parser_ab6b8bb5a97c0bce976135dc4eccc1452_cgraph}
+\includegraphics[width=350pt]{class_i_parser_ab6b8bb5a97c0bce976135dc4eccc1452_cgraph}
 \end{center}
 \end{figure}
 
@@ -162,27 +150,23 @@ Here is the call graph for this function:\nopagebreak
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_i_parser_a2c89fe9ae1c200eda69c78f7441dea00}{
-\index{IParser@{IParser}!lexer@{lexer}}
-\index{lexer@{lexer}!IParser@{IParser}}
-\subsubsection[{lexer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf ILexer}$\ast$ {\bf IParser::lexer}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_i_parser_a2c89fe9ae1c200eda69c78f7441dea00}
+\hypertarget{class_i_parser_a2c89fe9ae1c200eda69c78f7441dea00}{\index{I\-Parser@{I\-Parser}!lexer@{lexer}}
+\index{lexer@{lexer}!IParser@{I\-Parser}}
+\subsubsection[{lexer}]{\setlength{\rightskip}{0pt plus 5cm}{\bf I\-Lexer}$\ast$ I\-Parser\-::lexer\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_i_parser_a2c89fe9ae1c200eda69c78f7441dea00}
 
 
-Definition at line 29 of file iparser.h.
+Definition at line 29 of file iparser.\-h.
 
-\hypertarget{class_i_parser_a525c62c560492ef3bdb1a21c4da13e04}{
-\index{IParser@{IParser}!result@{result}}
-\index{result@{result}!IParser@{IParser}}
-\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf AST}$\ast$ {\bf IParser::result}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_i_parser_a525c62c560492ef3bdb1a21c4da13e04}
+\hypertarget{class_i_parser_a525c62c560492ef3bdb1a21c4da13e04}{\index{I\-Parser@{I\-Parser}!result@{result}}
+\index{result@{result}!IParser@{I\-Parser}}
+\subsubsection[{result}]{\setlength{\rightskip}{0pt plus 5cm}{\bf A\-S\-T}$\ast$ I\-Parser\-::result\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_i_parser_a525c62c560492ef3bdb1a21c4da13e04}
 
 
-Definition at line 28 of file iparser.h.
+Definition at line 28 of file iparser.\-h.
 
 
 
-The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-source/parser/\hyperlink{iparser_8h}{iparser.h}\item 
-source/parser/\hyperlink{iparser_8cpp}{iparser.cpp}\end{DoxyCompactItemize}
+source/parser/\hyperlink{iparser_8h}{iparser.\-h}\item 
+source/parser/\hyperlink{iparser_8cpp}{iparser.\-cpp}\end{DoxyCompactItemize}

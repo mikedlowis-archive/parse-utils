@@ -1,2 +1,6 @@
 <map id="G" name="G">
+<area shape="rect" id="node7" href="$ast_8h.html" title="ast.h" alt="" coords="137,155,185,181"/>
+<area shape="rect" id="node17" href="$ilexer_8h.html" title="ilexer.h" alt="" coords="353,80,415,107"/>
+<area shape="rect" id="node25" href="$ivisitor_8h.html" title="ivisitor.h" alt="" coords="249,80,316,107"/>
+<area shape="rect" id="node14" href="$token_8h.html" title="token.h" alt="" coords="261,229,325,256"/>
 </map>

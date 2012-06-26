@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_a_s_t.html#addfd95ed0ba31ec4fdcf08097fb7fa75" title="AST::children" alt="" coords="175,5,273,35"/>
-<area shape="rect" id="node5" href="$class_a_s_t.html#ad975048d27d24ffe87e95b1eed995d5e" title="AST::text" alt="" coords="185,59,263,88"/>
-<area shape="rect" id="node7" href="$class_a_s_t.html#ad947af30e5dbb743c41769296dc03c9d" title="AST::type" alt="" coords="184,112,264,141"/>
+<area shape="rect" id="node3" href="$class_a_s_t.html#addfd95ed0ba31ec4fdcf08097fb7fa75" title="AST::children" alt="" coords="171,5,269,32"/>
+<area shape="rect" id="node5" href="$class_a_s_t.html#ad947af30e5dbb743c41769296dc03c9d" title="AST::type" alt="" coords="181,56,259,83"/>
+<area shape="rect" id="node7" href="$class_a_s_t.html#ad975048d27d24ffe87e95b1eed995d5e" title="AST::text" alt="" coords="183,107,257,133"/>
 </map>

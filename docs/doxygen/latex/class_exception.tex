@@ -1,10 +1,9 @@
-\hypertarget{class_exception}{
-\section{Exception Class Reference}
+\hypertarget{class_exception}{\section{Exception Class Reference}
 \label{class_exception}\index{Exception@{Exception}}
 }
 
 
-{\ttfamily \#include $<$exception.h$>$}
+{\ttfamily \#include $<$exception.\-h$>$}
 
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
@@ -15,27 +14,27 @@
 \item 
 \hyperlink{class_exception_aa049354d27370ca0176a16c5ed7394e9}{Exception} (int line, int column)  throw ()
 \item 
-virtual \hyperlink{class_exception_ad1ba411de295ef2eeb02ba26284a829a}{$\sim$Exception} ()  throw ()
+virtual \hyperlink{class_exception_ad1ba411de295ef2eeb02ba26284a829a}{$\sim$\-Exception} ()  throw ()
 \item 
 virtual const char $\ast$ \hyperlink{class_exception_a380f0477d9ef319911e7a8167bd47f1f}{what} () const   throw ()
 \item 
-void \hyperlink{class_exception_a2514fc52bf060e2d242f5e6f1b87e8bf}{message} (const std::string \&msg)  throw ()
+void \hyperlink{class_exception_a2514fc52bf060e2d242f5e6f1b87e8bf}{message} (const std\-::string \&msg)  throw ()
 \item 
-const std::string \& \hyperlink{class_exception_a8f4eb20583b892ce7b0fb55554a94156}{message} (void) const   throw ()
+const std\-::string \& \hyperlink{class_exception_a8f4eb20583b892ce7b0fb55554a94156}{message} (void) const   throw ()
 \end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
-int \hyperlink{class_exception_ab30bf54ebcf9ead45300ce422fb4b6b8}{ex\_\-line}
+int \hyperlink{class_exception_ab30bf54ebcf9ead45300ce422fb4b6b8}{ex\-\_\-line}
 \item 
-int \hyperlink{class_exception_a5a08b0f7c24a639573c36ace567348c4}{ex\_\-column}
+int \hyperlink{class_exception_a5a08b0f7c24a639573c36ace567348c4}{ex\-\_\-column}
 \item 
-std::string \hyperlink{class_exception_ac106ae3b8d10ae97ee0b71a270fbda27}{ex\_\-msg}
+std\-::string \hyperlink{class_exception_ac106ae3b8d10ae97ee0b71a270fbda27}{ex\-\_\-msg}
 \end{DoxyCompactItemize}
 \subsection*{Friends}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{class_exception}{Exception} \& \hyperlink{class_exception_a14ad8d29bc8d9f4eb8d2a0b0e5b1047f}{operator$<$$<$} (\hyperlink{class_exception}{Exception} \&ex, const std::string \&rhs)
+\hyperlink{class_exception}{Exception} \& \hyperlink{class_exception_a14ad8d29bc8d9f4eb8d2a0b0e5b1047f}{operator$<$$<$} (\hyperlink{class_exception}{Exception} \&ex, const std\-::string \&rhs)
 \item 
 \hyperlink{class_exception}{Exception} \& \hyperlink{class_exception_a96bb231c8f8c68239c83b6fa691e02b4}{operator$<$$<$} (\hyperlink{class_exception}{Exception} \&ex, unsigned int rhs)
 \end{DoxyCompactItemize}
@@ -44,170 +43,146 @@ std::string \hyperlink{class_exception_ac106ae3b8d10ae97ee0b71a270fbda27}{ex\_\-
 \subsection{Detailed Description}
 
 
-Definition at line 8 of file exception.h.
+Definition at line 8 of file exception.\-h.
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\hypertarget{class_exception_a1b78336bb26edf8e784783cc150c5801}{
+\hypertarget{class_exception_a1b78336bb26edf8e784783cc150c5801}{\index{Exception@{Exception}!Exception@{Exception}}
 \index{Exception@{Exception}!Exception@{Exception}}
-\index{Exception@{Exception}!Exception@{Exception}}
-\subsubsection[{Exception}]{\setlength{\rightskip}{0pt plus 5cm}Exception::Exception (
+\subsubsection[{Exception}]{\setlength{\rightskip}{0pt plus 5cm}Exception\-::\-Exception (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)  throw ()}}
-\label{class_exception_a1b78336bb26edf8e784783cc150c5801}
+)  throw ()}}\label{class_exception_a1b78336bb26edf8e784783cc150c5801}
 
 
-Definition at line 4 of file exception.cpp.
+Definition at line 4 of file exception.\-cpp.
 
-\hypertarget{class_exception_abfa91380075acb0b040b401ace9885d8}{
+\hypertarget{class_exception_abfa91380075acb0b040b401ace9885d8}{\index{Exception@{Exception}!Exception@{Exception}}
 \index{Exception@{Exception}!Exception@{Exception}}
-\index{Exception@{Exception}!Exception@{Exception}}
-\subsubsection[{Exception}]{\setlength{\rightskip}{0pt plus 5cm}Exception::Exception (
+\subsubsection[{Exception}]{\setlength{\rightskip}{0pt plus 5cm}Exception\-::\-Exception (
 \begin{DoxyParamCaption}
 \item[{const {\bf Token} \&}]{tok}
 \end{DoxyParamCaption}
-)  throw ()}}
-\label{class_exception_abfa91380075acb0b040b401ace9885d8}
+)  throw ()}}\label{class_exception_abfa91380075acb0b040b401ace9885d8}
 
 
-Definition at line 8 of file exception.cpp.
+Definition at line 8 of file exception.\-cpp.
 
-\hypertarget{class_exception_aa049354d27370ca0176a16c5ed7394e9}{
+\hypertarget{class_exception_aa049354d27370ca0176a16c5ed7394e9}{\index{Exception@{Exception}!Exception@{Exception}}
 \index{Exception@{Exception}!Exception@{Exception}}
-\index{Exception@{Exception}!Exception@{Exception}}
-\subsubsection[{Exception}]{\setlength{\rightskip}{0pt plus 5cm}Exception::Exception (
+\subsubsection[{Exception}]{\setlength{\rightskip}{0pt plus 5cm}Exception\-::\-Exception (
 \begin{DoxyParamCaption}
 \item[{int}]{line, }
 \item[{int}]{column}
 \end{DoxyParamCaption}
-)  throw ()}}
-\label{class_exception_aa049354d27370ca0176a16c5ed7394e9}
+)  throw ()}}\label{class_exception_aa049354d27370ca0176a16c5ed7394e9}
 
 
-Definition at line 16 of file exception.cpp.
+Definition at line 16 of file exception.\-cpp.
 
-\hypertarget{class_exception_ad1ba411de295ef2eeb02ba26284a829a}{
-\index{Exception@{Exception}!$\sim$Exception@{$\sim$Exception}}
-\index{$\sim$Exception@{$\sim$Exception}!Exception@{Exception}}
-\subsubsection[{$\sim$Exception}]{\setlength{\rightskip}{0pt plus 5cm}virtual Exception::$\sim$Exception (
+\hypertarget{class_exception_ad1ba411de295ef2eeb02ba26284a829a}{\index{Exception@{Exception}!$\sim$\-Exception@{$\sim$\-Exception}}
+\index{$\sim$\-Exception@{$\sim$\-Exception}!Exception@{Exception}}
+\subsubsection[{$\sim$\-Exception}]{\setlength{\rightskip}{0pt plus 5cm}virtual Exception\-::$\sim$\-Exception (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-)  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}inline, virtual\mbox{]}}}}
-\label{class_exception_ad1ba411de295ef2eeb02ba26284a829a}
+)  throw ()\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}}\label{class_exception_ad1ba411de295ef2eeb02ba26284a829a}
 
 
-Definition at line 18 of file exception.h.
+Definition at line 18 of file exception.\-h.
 
 
 
 \subsection{Member Function Documentation}
-\hypertarget{class_exception_a2514fc52bf060e2d242f5e6f1b87e8bf}{
-\index{Exception@{Exception}!message@{message}}
+\hypertarget{class_exception_a2514fc52bf060e2d242f5e6f1b87e8bf}{\index{Exception@{Exception}!message@{message}}
 \index{message@{message}!Exception@{Exception}}
-\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}void Exception::message (
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}void Exception\-::message (
 \begin{DoxyParamCaption}
-\item[{const std::string \&}]{msg}
+\item[{const std\-::string \&}]{msg}
 \end{DoxyParamCaption}
-)  throw ()}}
-\label{class_exception_a2514fc52bf060e2d242f5e6f1b87e8bf}
+)  throw ()}}\label{class_exception_a2514fc52bf060e2d242f5e6f1b87e8bf}
 
 
-Definition at line 29 of file exception.cpp.
+Definition at line 29 of file exception.\-cpp.
 
-\hypertarget{class_exception_a8f4eb20583b892ce7b0fb55554a94156}{
-\index{Exception@{Exception}!message@{message}}
+\hypertarget{class_exception_a8f4eb20583b892ce7b0fb55554a94156}{\index{Exception@{Exception}!message@{message}}
 \index{message@{message}!Exception@{Exception}}
-\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}const std::string \& Exception::message (
+\subsubsection[{message}]{\setlength{\rightskip}{0pt plus 5cm}const std\-::string \& Exception\-::message (
 \begin{DoxyParamCaption}
 \item[{void}]{}
 \end{DoxyParamCaption}
-) const  throw ()}}
-\label{class_exception_a8f4eb20583b892ce7b0fb55554a94156}
+) const  throw ()}}\label{class_exception_a8f4eb20583b892ce7b0fb55554a94156}
 
 
-Definition at line 34 of file exception.cpp.
+Definition at line 34 of file exception.\-cpp.
 
-\hypertarget{class_exception_a380f0477d9ef319911e7a8167bd47f1f}{
-\index{Exception@{Exception}!what@{what}}
+\hypertarget{class_exception_a380f0477d9ef319911e7a8167bd47f1f}{\index{Exception@{Exception}!what@{what}}
 \index{what@{what}!Exception@{Exception}}
-\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Exception::what (
+\subsubsection[{what}]{\setlength{\rightskip}{0pt plus 5cm}const char $\ast$ Exception\-::what (
 \begin{DoxyParamCaption}
 {}
 \end{DoxyParamCaption}
-) const  throw ()\hspace{0.3cm}{\ttfamily  \mbox{[}virtual\mbox{]}}}}
-\label{class_exception_a380f0477d9ef319911e7a8167bd47f1f}
+) const  throw ()\hspace{0.3cm}{\ttfamily [virtual]}}}\label{class_exception_a380f0477d9ef319911e7a8167bd47f1f}
 
 
-Definition at line 24 of file exception.cpp.
+Definition at line 24 of file exception.\-cpp.
 
 
 
 \subsection{Friends And Related Function Documentation}
-\hypertarget{class_exception_a14ad8d29bc8d9f4eb8d2a0b0e5b1047f}{
-\index{Exception@{Exception}!operator$<$$<$@{operator$<$$<$}}
+\hypertarget{class_exception_a14ad8d29bc8d9f4eb8d2a0b0e5b1047f}{\index{Exception@{Exception}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Exception@{Exception}}
 \subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exception}\& operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{{\bf Exception} \&}]{ex, }
-\item[{const std::string \&}]{rhs}
+\item[{const std\-::string \&}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
-\label{class_exception_a14ad8d29bc8d9f4eb8d2a0b0e5b1047f}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_exception_a14ad8d29bc8d9f4eb8d2a0b0e5b1047f}
 
 
-Definition at line 39 of file exception.cpp.
+Definition at line 39 of file exception.\-cpp.
 
-\hypertarget{class_exception_a96bb231c8f8c68239c83b6fa691e02b4}{
-\index{Exception@{Exception}!operator$<$$<$@{operator$<$$<$}}
+\hypertarget{class_exception_a96bb231c8f8c68239c83b6fa691e02b4}{\index{Exception@{Exception}!operator$<$$<$@{operator$<$$<$}}
 \index{operator$<$$<$@{operator$<$$<$}!Exception@{Exception}}
 \subsubsection[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}{\bf Exception}\& operator$<$$<$ (
 \begin{DoxyParamCaption}
 \item[{{\bf Exception} \&}]{ex, }
 \item[{unsigned int}]{rhs}
 \end{DoxyParamCaption}
-)\hspace{0.3cm}{\ttfamily  \mbox{[}friend\mbox{]}}}}
-\label{class_exception_a96bb231c8f8c68239c83b6fa691e02b4}
+)\hspace{0.3cm}{\ttfamily [friend]}}}\label{class_exception_a96bb231c8f8c68239c83b6fa691e02b4}
 
 
-Definition at line 45 of file exception.cpp.
+Definition at line 45 of file exception.\-cpp.
 
 
 
 \subsection{Member Data Documentation}
-\hypertarget{class_exception_a5a08b0f7c24a639573c36ace567348c4}{
-\index{Exception@{Exception}!ex\_\-column@{ex\_\-column}}
-\index{ex\_\-column@{ex\_\-column}!Exception@{Exception}}
-\subsubsection[{ex\_\-column}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Exception::ex\_\-column}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_exception_a5a08b0f7c24a639573c36ace567348c4}
+\hypertarget{class_exception_a5a08b0f7c24a639573c36ace567348c4}{\index{Exception@{Exception}!ex\-\_\-column@{ex\-\_\-column}}
+\index{ex\-\_\-column@{ex\-\_\-column}!Exception@{Exception}}
+\subsubsection[{ex\-\_\-column}]{\setlength{\rightskip}{0pt plus 5cm}int Exception\-::ex\-\_\-column\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_exception_a5a08b0f7c24a639573c36ace567348c4}
 
 
-Definition at line 12 of file exception.h.
+Definition at line 12 of file exception.\-h.
 
-\hypertarget{class_exception_ab30bf54ebcf9ead45300ce422fb4b6b8}{
-\index{Exception@{Exception}!ex\_\-line@{ex\_\-line}}
-\index{ex\_\-line@{ex\_\-line}!Exception@{Exception}}
-\subsubsection[{ex\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}int {\bf Exception::ex\_\-line}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_exception_ab30bf54ebcf9ead45300ce422fb4b6b8}
+\hypertarget{class_exception_ab30bf54ebcf9ead45300ce422fb4b6b8}{\index{Exception@{Exception}!ex\-\_\-line@{ex\-\_\-line}}
+\index{ex\-\_\-line@{ex\-\_\-line}!Exception@{Exception}}
+\subsubsection[{ex\-\_\-line}]{\setlength{\rightskip}{0pt plus 5cm}int Exception\-::ex\-\_\-line\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_exception_ab30bf54ebcf9ead45300ce422fb4b6b8}
 
 
-Definition at line 11 of file exception.h.
+Definition at line 11 of file exception.\-h.
 
-\hypertarget{class_exception_ac106ae3b8d10ae97ee0b71a270fbda27}{
-\index{Exception@{Exception}!ex\_\-msg@{ex\_\-msg}}
-\index{ex\_\-msg@{ex\_\-msg}!Exception@{Exception}}
-\subsubsection[{ex\_\-msg}]{\setlength{\rightskip}{0pt plus 5cm}std::string {\bf Exception::ex\_\-msg}\hspace{0.3cm}{\ttfamily  \mbox{[}protected\mbox{]}}}}
-\label{class_exception_ac106ae3b8d10ae97ee0b71a270fbda27}
+\hypertarget{class_exception_ac106ae3b8d10ae97ee0b71a270fbda27}{\index{Exception@{Exception}!ex\-\_\-msg@{ex\-\_\-msg}}
+\index{ex\-\_\-msg@{ex\-\_\-msg}!Exception@{Exception}}
+\subsubsection[{ex\-\_\-msg}]{\setlength{\rightskip}{0pt plus 5cm}std\-::string Exception\-::ex\-\_\-msg\hspace{0.3cm}{\ttfamily [protected]}}}\label{class_exception_ac106ae3b8d10ae97ee0b71a270fbda27}
 
 
-Definition at line 13 of file exception.h.
+Definition at line 13 of file exception.\-h.
 
 
 
-The documentation for this class was generated from the following files:\begin{DoxyCompactItemize}
+The documentation for this class was generated from the following files\-:\begin{DoxyCompactItemize}
 \item 
-source/exception/\hyperlink{exception_8h}{exception.h}\item 
-source/exception/\hyperlink{exception_8cpp}{exception.cpp}\end{DoxyCompactItemize}
+source/exception/\hyperlink{exception_8h}{exception.\-h}\item 
+source/exception/\hyperlink{exception_8cpp}{exception.\-cpp}\end{DoxyCompactItemize}

@@ -1,5 +1,5 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_i_buffer.html#afc6767d57494a8020611c90f31f3f9df" title="IBuffer::fill" alt="" coords="145,5,223,35"/>
-<area shape="rect" id="node5" href="$class_i_buffer.html#aa61fe968b6058c01883bf4a464e7089f" title="IBuffer::sync" alt="" coords="273,5,367,35"/>
-<area shape="rect" id="node7" href="$class_i_buffer.html#a43343cee2b18e6af304da8ee0cf19c5d" title="IBuffer::consume" alt="" coords="417,5,535,35"/>
+<area shape="rect" id="node3" href="$class_i_buffer.html#afc6767d57494a8020611c90f31f3f9df" title="IBuffer::fill" alt="" coords="144,5,221,32"/>
+<area shape="rect" id="node5" href="$class_i_buffer.html#aa61fe968b6058c01883bf4a464e7089f" title="IBuffer::sync" alt="" coords="269,5,360,32"/>
+<area shape="rect" id="node7" href="$class_i_buffer.html#a43343cee2b18e6af304da8ee0cf19c5d" title="IBuffer::consume" alt="" coords="408,5,525,32"/>
 </map>

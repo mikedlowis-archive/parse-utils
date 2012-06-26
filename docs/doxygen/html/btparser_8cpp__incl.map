@@ -1,3 +1,10 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$btparser_8h.html" title="btparser.h" alt="" coords="139,83,219,112"/>
+<area shape="rect" id="node3" href="$btparser_8h.html" title="btparser.h" alt="" coords="289,96,367,123"/>
+<area shape="rect" id="node41" href="$exception_8h.html" title="exception.h" alt="" coords="75,96,161,123"/>
+<area shape="rect" id="node9" href="$imarker_8h.html" title="imarker.h" alt="" coords="484,171,557,197"/>
+<area shape="rect" id="node12" href="$iparser_8h.html" title="iparser.h" alt="" coords="293,171,363,197"/>
+<area shape="rect" id="node18" href="$ast_8h.html" title="ast.h" alt="" coords="461,320,509,347"/>
+<area shape="rect" id="node28" href="$ilexer_8h.html" title="ilexer.h" alt="" coords="177,245,239,272"/>
+<area shape="rect" id="node36" href="$ivisitor_8h.html" title="ivisitor.h" alt="" coords="417,245,484,272"/>
+<area shape="rect" id="node25" href="$token_8h.html" title="token.h" alt="" coords="191,395,255,421"/>
 </map>

@@ -2,36 +2,16 @@
 <html><head><title></title>
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <link rel="stylesheet" type="text/css" href="search.css"/>
+<script type="text/javascript" src="functions_6d.js"></script>
 <script type="text/javascript" src="search.js"></script>
 </head>
 <body class="SRPage">
 <div id="SRIndex">
 <div class="SRStatus" id="Loading">Loading...</div>
-<div class="SRResult" id="SR_mark">
- <div class="SREntry">
-  <a id="Item0" onkeydown="return searchResults.Nav(event,0)" onkeypress="return searchResults.Nav(event,0)" onkeyup="return searchResults.Nav(event,0)" class="SRSymbol" href="../class_i_marker.html#a92024922612faa5bb0106609f151c050" target="_parent">mark</a>
-  <span class="SRScope">IMarker</span>
- </div>
-</div>
-<div class="SRResult" id="SR_match">
- <div class="SREntry">
-  <a id="Item1" onkeydown="return searchResults.Nav(event,1)" onkeypress="return searchResults.Nav(event,1)" onkeyup="return searchResults.Nav(event,1)" class="SRSymbol" href="javascript:searchResults.Toggle('SR_match')">match</a>
-  <div class="SRChildren">
-    <a id="Item1_c0" onkeydown="return searchResults.NavChild(event,1,0)" onkeypress="return searchResults.NavChild(event,1,0)" onkeyup="return searchResults.NavChild(event,1,0)" class="SRScope" href="../class_i_lexer.html#a556fdc7b13486f03cb7c3d7d4612666c" target="_parent">ILexer::match()</a>
-    <a id="Item1_c1" onkeydown="return searchResults.NavChild(event,1,1)" onkeypress="return searchResults.NavChild(event,1,1)" onkeyup="return searchResults.NavChild(event,1,1)" class="SRScope" href="../class_l_l_n_lexer.html#a4c250c0e032a7cc3e0ffbdcf8c3b18b7" target="_parent">LLNLexer::match()</a>
-    <a id="Item1_c2" onkeydown="return searchResults.NavChild(event,1,2)" onkeypress="return searchResults.NavChild(event,1,2)" onkeyup="return searchResults.NavChild(event,1,2)" class="SRScope" href="../class_b_t_parser.html#ad8fb9348dd9bc2e65a08033dd2539a03" target="_parent">BTParser::match()</a>
-  </div>
- </div>
-</div>
-<div class="SRResult" id="SR_message">
- <div class="SREntry">
-  <a id="Item2" onkeydown="return searchResults.Nav(event,2)" onkeypress="return searchResults.Nav(event,2)" onkeyup="return searchResults.Nav(event,2)" class="SRSymbol" href="javascript:searchResults.Toggle('SR_message')">message</a>
-  <div class="SRChildren">
-    <a id="Item2_c0" onkeydown="return searchResults.NavChild(event,2,0)" onkeypress="return searchResults.NavChild(event,2,0)" onkeyup="return searchResults.NavChild(event,2,0)" class="SRScope" href="../class_exception.html#a2514fc52bf060e2d242f5e6f1b87e8bf" target="_parent">Exception::message(const std::string &amp;msg)</a>
-    <a id="Item2_c1" onkeydown="return searchResults.NavChild(event,2,1)" onkeypress="return searchResults.NavChild(event,2,1)" onkeyup="return searchResults.NavChild(event,2,1)" class="SRScope" href="../class_exception.html#a8f4eb20583b892ce7b0fb55554a94156" target="_parent">Exception::message(void) const </a>
-  </div>
- </div>
-</div>
+<div id="SRResults"></div>
+<script type="text/javascript"><!--
+createResults();
+--></script>
 <div class="SRStatus" id="Searching">Searching...</div>
 <div class="SRStatus" id="NoMatches">No Matches</div>
 <script type="text/javascript"><!--

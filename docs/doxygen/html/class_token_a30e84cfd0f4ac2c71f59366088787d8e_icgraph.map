@@ -1,4 +1,4 @@
 <map id="G" name="G">
-<area shape="rect" id="node3" href="$class_a_s_t.html#a039b00473e1617d1c3003b0a22d5f2d9" title="AST::AST" alt="" coords="165,5,245,35"/>
-<area shape="rect" id="node5" href="$class_token.html#a4b0d7419c692350d4b28b947956e7e82" title="Token::operator==" alt="" coords="141,59,269,88"/>
+<area shape="rect" id="node3" href="$class_token.html#a4b0d7419c692350d4b28b947956e7e82" title="Token::operator==" alt="" coords="139,5,266,32"/>
+<area shape="rect" id="node5" href="$class_a_s_t.html#a039b00473e1617d1c3003b0a22d5f2d9" title="AST::AST" alt="" coords="163,56,243,83"/>
 </map>
