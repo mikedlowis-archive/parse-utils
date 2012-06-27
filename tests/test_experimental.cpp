@@ -49,14 +49,21 @@ class CharBuffer : public IBuffer
         }
 };
 
+//-----------------------------------------------------------------------------
+// Lexer Class
+//-----------------------------------------------------------------------------
 class Lexer
 {
+    protected:
+        Lexer* lex_sibling;
+        Lexer* lex_child;
     public:
-        Lexer()
+        // Construction/Destruction
+        Lexer() : lex_sibling(0), lex_child(0)
         {
         }
 
-        Lexer(Lexer& lxr)
+        Lexer(const Lexer& lxr) : lex_sibling(0), lex_child(0)
         {
         }
 
@@ -64,36 +71,64 @@ class Lexer
         {
         }
 
-        Lexer* clone()
+        // Accessors
+        Lexer* sibling()
+        {
+            return lex_sibling;
+        }
+
+        void sibling(Lexer* lxr)
+        {
+            lex_sibling = lxr;
+        }
+
+        Lexer* child()
+        {
+            return lex_child;
+        }
+
+        void child(Lexer* lxr)
+        {
+            lex_sibling = lxr;
+        }
+
+        // Action methods
+        Lexer* clone() const
         {
             return new Lexer(*this);
         }
 
-        Token operator() (CharBuffer& input)
+        void addSibling(Lexer* lxr)
         {
-            return Token();
         }
 
-        Lexer& operator= (const Lexer& rhs)
+        void addChild(Lexer* lxr)
         {
-            return *this;
+        }
+
+        // Operators
+        Token operator() (CharBuffer& input)
+        {
+            std::cout << this << " ";
+            if( NULL != sibling() )
+            {
+                (*sibling())( input );
+            }
+            std::cout << std::endl;
+            return Token();
         }
 
         Lexer& operator+ (const Lexer& rhs)
         {
+            addSibling( rhs.clone() );
             return *this;
         }
 
         Lexer& operator| (const Lexer& rhs)
         {
+            addChild( rhs.clone() );
             return *this;
         }
-};
-
-class Parser
-{
-    public:
-        //AST* operator() (CharBuffer& input) = 0;
 };
 
 //-----------------------------------------------------------------------------
@@ -108,9 +143,7 @@ namespace {
         std::ifstream file;
         file.open( "input.txt" );
         CharBuffer input( file );
-        Lexer lexer;
-        lexer = (Lexer() + Lexer())
-              | (Lexer() + Lexer() + Lexer());
+        Lexer& lexer = (Lexer() + Lexer() + Lexer());
         lexer( input );
     }
 }
