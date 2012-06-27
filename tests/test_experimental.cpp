@@ -52,9 +52,41 @@ class CharBuffer : public IBuffer
 class Lexer
 {
     public:
+        Lexer()
+        {
+        }
+
+        Lexer(Lexer& lxr)
+        {
+        }
+
+        virtual ~Lexer()
+        {
+        }
+
+        Lexer* clone()
+        {
+            return new Lexer(*this);
+        }
+
         Token operator() (CharBuffer& input)
         {
             return Token();
+        }
+
+        Lexer& operator= (const Lexer& rhs)
+        {
+            return *this;
+        }
+
+        Lexer& operator+ (const Lexer& rhs)
+        {
+            return *this;
+        }
+
+        Lexer& operator| (const Lexer& rhs)
+        {
+            return *this;
         }
 };
 
@@ -77,6 +109,8 @@ namespace {
         file.open( "input.txt" );
         CharBuffer input( file );
         Lexer lexer;
-        lexer(input);
+        lexer = (Lexer() + Lexer())
+              | (Lexer() + Lexer() + Lexer());
+        lexer( input );
     }
 }
